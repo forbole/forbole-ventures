@@ -18,7 +18,8 @@ export interface LayoutProps {
 }
 
 const Layout = (props: LayoutProps) => {
-  const { children, className, color, navColor, mobileNavColor, logoURL } = props;
+  const { children, className, color, navColor, mobileNavColor, logoURL } =
+    props;
   const { t, lang } = useTranslation();
   // const { t } = useTranslation(["home", "common"]);
   const { classes } = useGetStyles();
@@ -33,11 +34,11 @@ const Layout = (props: LayoutProps) => {
     currentPath = window?.location?.href || "";
   }
 
-  const title = "Desmos Network";
+  const title = "Forbole Ventures";
   const type = "website";
   const description =
-    "A blockchain which serves as the backbone to empower the development of user-centric social networks.";
-  const imageUrl = `${baseUrl}/images/desmos.png`;
+    "The private investment arm of Forbole to invest in promising crypto projects.";
+  const imageUrl = `${baseUrl}/images/icons/favicon-96x96.png`;
 
   return (
     <>
@@ -50,7 +51,7 @@ const Layout = (props: LayoutProps) => {
         openGraph={{
           type,
           title,
-          site_name: "Desmos",
+          site_name: "Forbole Ventures",
           url: currentPath,
           description,
           images: [
@@ -95,7 +96,7 @@ const Layout = (props: LayoutProps) => {
         <div className="socials__container">
           <SocialMedia />
         </div>
-        <Footer baseURL={logoURL || "/"}/>
+        <Footer baseURL={logoURL || "/"} />
       </div>
     </>
   );

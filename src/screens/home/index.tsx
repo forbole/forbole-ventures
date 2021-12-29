@@ -5,18 +5,7 @@ import useTranslation from "next-translate/useTranslation";
 import { Layout, SocialMedia } from "@components";
 import { useGetStyles } from "./styles";
 import LazyShow from "./hooks";
-import {
-  Hero,
-  Intro,
-  Solution,
-  Portfolio,
-  Profile,
-  Supply,
-  Team,
-  RoadMap,
-  Ecosystem,
-  VC,
-} from "./components";
+import { Hero, Intro, Solution, Portfolio, VC } from "./components";
 
 const Home = () => {
   const { t, lang } = useTranslation();

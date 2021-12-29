@@ -1,3 +1,16 @@
+<div style="
+  padding: 1rem 0;
+">
+<p align="center">
+  <img src="./public/images/icons/favicon-96x96.svg" style="
+    width: 250px
+  "/>
+</p>
+
+# Forbole Ventures Official Website
+
+Official website of Forbole Ventures
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
