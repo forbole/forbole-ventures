@@ -44,10 +44,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -69,9 +65,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link
           rel="mask-icon"
           href="/images/icons/safari-pinned-tab.svg"
-          color="#5bbad5"
+          color="#000000"
         />
-        <link rel="shortcut icon" href="/images/icons/favicon.ico" />
+        <meta name="msapplication-TileColor" content="#ccff00" />
+        <meta name="theme-color" content="#000000" />
       </Head>
       {/* <ApolloProvider client={client}> */}
       <ThemeProvider theme={theme}>
