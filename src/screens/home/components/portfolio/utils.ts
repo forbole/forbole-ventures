@@ -14,23 +14,28 @@ export const networkItems = [
     {
         image: AkashIcon, 
         name: "Akash",
-        why: "link"
+        link: "https://akash.network/",
+        why: "https://www.forbole.com/blog/why-forbole-joins-akash-ch"
     },
     {
         image: BitsongIcon,
         name: "BitSong",
+        link: "https://bitsong.io/"
     },
     {
         image: DataXIcon, 
         name: "datax.io",
+        link: "https://datax.io/"
     },
     {
         image: EMoneyIcon, 
         name: "e-Money",
+        link: "https://www.e-money.com/"
     },
     {
         image: KavaIcon,
         name: "Kava",
+        link: "https://www.kava.io/"
     },
     {
         image: OasisIcon,

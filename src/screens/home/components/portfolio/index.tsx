@@ -48,7 +48,13 @@ const Portfolio = () => {
 
       <Box className="networkGrid">
         {networkItems.map((item, i) => (
-          <Network key={i} image={item.image} name={item.name} why={item.why} />
+          <Network
+            key={i}
+            image={item.image}
+            name={item.name}
+            link={item.link}
+            why={item.why}
+          />
         ))}
       </Box>
     </div>

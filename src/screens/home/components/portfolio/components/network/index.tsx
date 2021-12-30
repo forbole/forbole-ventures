@@ -14,12 +14,13 @@ import { useGetScreenSizeHook } from "@hooks";
 export interface INetworkProps {
   image: any;
   name: string;
+  link?: string;
   why?: string;
 }
 
 const Network = (props: INetworkProps) => {
   const { isDesktop } = useGetScreenSizeHook();
-  const { image, name, why } = props;
+  const { image, name, link, why } = props;
   const Svg = image;
   return (
     <Box display="flex" alignItems="center" flexDirection="column">
