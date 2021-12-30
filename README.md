@@ -2,7 +2,7 @@
   padding: 1rem 0;
 ">
 <p align="center">
-  <img src="/public/images/icons/android-chrome-192x192.png" style="
+  <img src="/public/images/icons/favicon-32x32.png" style="
     width: 250px
   "/>
 </p>
