@@ -23,10 +23,7 @@ const Footer: React.FC<{
   const year = new Date().getFullYear();
 
   return (
-    <Box
-      className={`${classes.root} footer`}
-      mt={isDesktop && theme.spacing(2)}
-    >
+    <Box className={`${classes.root} footer`} mt={theme.spacing(2)}>
       <Box className="footer__content">
         {/* ============================= */}
         {/* logo */}
