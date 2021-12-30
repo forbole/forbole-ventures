@@ -12,6 +12,7 @@ import { useGetScreenSizeHook } from "@hooks";
 import { CustomTheme } from "@styles";
 import useTranslation from "next-translate/useTranslation";
 import { useStyles } from "./styles";
+import CountUp from "react-countup";
 import LeftDotIcon from "@assets/intro-left-dot.svg";
 import RightDotIcon from "@assets/intro-right-dot.svg";
 
@@ -76,7 +77,7 @@ const Intro = () => {
             variant="h1"
             // style={{ color: theme.palette.custom.general.main }}
           >
-            11
+            <CountUp duration={5} end={11} />
           </Typography>
           <Typography
             variant="body1"
@@ -96,7 +97,9 @@ const Intro = () => {
             variant="h1"
             // style={{ color: theme.palette.custom.general.main }}
           >
-            $40M+
+            $
+            <CountUp duration={20} end={40} />
+            M+
           </Typography>
           <Typography
             variant="body1"
@@ -116,7 +119,8 @@ const Intro = () => {
             variant="h1"
             // style={{ color: theme.palette.custom.general.main }}
           >
-            $939M +
+            $
+            <CountUp duration={20} end={939} />M +
           </Typography>
           <Typography
             variant="body1"
