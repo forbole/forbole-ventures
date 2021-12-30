@@ -19,7 +19,7 @@ RUN ["yarn", "install", "--ignore-engines"]
 # Copying source files
 COPY . .
 
-ENV NODE_ENV "production"
+ENV ENV "production"
 ENV PORT 3000
 
 # Building app
