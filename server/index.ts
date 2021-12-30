@@ -6,7 +6,7 @@ import express, {
   import cors from 'cors';
   import axios from 'axios';
   
-  const isDev = process.env.NODE_ENV !== 'production';
+  const isDev = process.env.ENV !== 'production';
   const app = next({
     dev: isDev,
   });
@@ -27,7 +27,7 @@ import express, {
         if (err) throw err;
         console.log('> Port Ready On:');
         console.log(`> URL: http://localhost:${port}`);
-        console.log(`> ENV: ${process.env.NODE_ENV || 'development'}`);
+        console.log(`> ENV: ${process.env.ENV || 'development'}`);
         console.log(`> PORT: ${port}`);
       });
     } catch (e) {
