@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkedinIcon, TwitterIcon, TelegramIcon, FacebookIcon } from "@icons";
+import { EmailIcon, LinkedinIcon, TwitterIcon } from "@icons";
 
 export const socialMediaLinks: {
   component: React.ReactNode;
@@ -7,23 +7,18 @@ export const socialMediaLinks: {
   url: string;
 }[] = [
   {
-    component: <LinkedinIcon />,
-    className: "linkedin",
-    url: "https://discord.desmos.network",
+    component: <EmailIcon />,
+    className: "email",
+    url: "mailto:info@forbole.com",
   },
   {
-    component: <TelegramIcon />,
-    className: "telegram",
-    url: "https://github.com/desmos-labs",
+    component: <LinkedinIcon />,
+    className: "linkedin",
+    url: "https://www.linkedin.com/company/forbole-ventures/",
   },
   {
     component: <TwitterIcon />,
     className: "twitter",
-    url: "https://twitter.com/DesmosNetwork",
-  },
-  {
-    component: <FacebookIcon />,
-    className: "facebook",
-    url: "https://medium.com/desmosnetwork",
+    url: "https://twitter.com/ForboleV",
   },
 ];
