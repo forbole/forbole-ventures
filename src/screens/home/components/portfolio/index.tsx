@@ -30,7 +30,7 @@ const Portfolio = () => {
 
       <Box className="link">
         <a
-          href="/files/desmos-project-plan-v0.4.2.pdf"
+          href="https://www.forbole.com/stake-now"
           target="_blank"
           rel="noreferrer"
         >
