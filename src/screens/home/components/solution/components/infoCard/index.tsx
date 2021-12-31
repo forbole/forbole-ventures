@@ -38,7 +38,9 @@ const InfoCard = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Desmos Profiles
+                <Box style={{ fontSize: theme.spacing(3) }}>
+                  Desmos Profiles
+                </Box>
               </a>
             </Box>
             as their user profiles
@@ -53,7 +55,7 @@ const InfoCard = () => {
         <p>{details}</p> */}
           <Typography
             style={{
-              padding: isDesktop ? theme.spacing(1, 0) : theme.spacing(3, 0),
+              padding: isDesktop ? theme.spacing(1, 0) : theme.spacing(1.5, 0),
               fontWeight: 700,
               color: isDesktop ? "#CCFF00" : "#FFFFFF",
             }}

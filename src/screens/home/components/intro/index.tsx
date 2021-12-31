@@ -55,6 +55,7 @@ const Intro = () => {
       </Typography>
       <Typography
         variant="h1"
+        className="bigH1"
         style={{
           color: theme.palette.custom.general.main,
           fontSize: isDesktop ? theme.spacing(10) : theme.spacing(5),
@@ -62,7 +63,7 @@ const Intro = () => {
       >
         NEW GENERATION INTERNET
       </Typography>
-      <p>{t("intro")}</p>
+      <p className="intro">{t("intro")}</p>
       <List
         style={{
           backgroundColor: "rgba(199, 190, 190, 0.1)",

@@ -11,6 +11,9 @@ export const useStyles = () => {
         "& h1": {
           fontWeight: 900,
         },
+        "& h2": {
+          fontSize: theme.spacing(3),
+        },
         "& ul": {
           display: "flex",
           flexDirection: "column",
@@ -77,6 +80,15 @@ export const useStyles = () => {
         },
         [theme.breakpoints.up("lg")]: {
           maxWidth: "1200px",
+          "& .bigH1": {
+            fontSize: theme.spacing(9),
+          },
+          "& h2": {
+            fontSize: theme.spacing(5),
+          },
+          "& .intro": {
+            fontSize: theme.spacing(3),
+          },
         },
       },
     };

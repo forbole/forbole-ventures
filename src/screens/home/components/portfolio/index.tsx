@@ -26,11 +26,13 @@ const Portfolio = () => {
       >
         PORTFOLIO
       </Typography>
-      <p>{t("portfolioP")}</p>
+      <Box pb={theme.spacing(0.2)}>
+        <p>{t("portfolioP")}</p>
+      </Box>
 
       <Box className="link">
         <a
-          href="/files/desmos-project-plan-v0.4.2.pdf"
+          href="https://www.forbole.com/stake-now"
           target="_blank"
           rel="noreferrer"
         >
@@ -48,7 +50,13 @@ const Portfolio = () => {
 
       <Box className="networkGrid">
         {networkItems.map((item, i) => (
-          <Network key={i} image={item.image} name={item.name} why={item.why} />
+          <Network
+            key={i}
+            image={item.image}
+            name={item.name}
+            link={item.link}
+            why={item.why}
+          />
         ))}
       </Box>
     </div>

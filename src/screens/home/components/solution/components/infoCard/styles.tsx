@@ -26,7 +26,7 @@ export const useStyles = () => {
           },
         },
         " & svg": {
-          [theme.breakpoints.up("lg")]: { width: "30%" },
+          [theme.breakpoints.up("lg")]: { width: "40%" },
         },
         " & .card__content": {
           [theme.breakpoints.up("lg")]: {

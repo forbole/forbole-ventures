@@ -14,45 +14,55 @@ export const networkItems = [
     {
         image: AkashIcon, 
         name: "Akash",
-        why: "link"
+        link: "https://akash.network/",
+        why: "https://www.forbole.com/blog/why-forbole-joins-akash-ch"
     },
     {
         image: BitsongIcon,
         name: "BitSong",
+        link: "https://bitsong.io/"
     },
     {
         image: DataXIcon, 
         name: "datax.io",
+        link: "https://datax.io/"
     },
     {
         image: EMoneyIcon, 
         name: "e-Money",
+        link: "https://www.e-money.com/"
     },
     {
         image: KavaIcon,
         name: "Kava",
+        link: "https://www.kava.io/"
     },
     {
         image: OasisIcon,
         name: "Oasis Protocol",
-        why: "link",
+        link: "https://oasisprotocol.org/",
+        why: "https://medium.com/oasis-protocol-project/node-operator-spotlight-forbole-8d212786ca7d"
     },
     {
         image: RegenIcon,
-        name: "Regen Network"
+        name: "Regen Network",
+        link: "https://www.regen.network/"
     },
     {
         image: SolanaIcon,
         name: "Solana",
-        why: "link"
+        link: "https://solana.com/",
+        why: "https://matters.news/@forbole/forbole-%E5%8F%83%E8%88%87-solana-%E7%9A%84%E5%8E%9F%E5%9B%A0-bafyreihwvyjqn7u3jjiqdfsiogptyu5uqfjrc24knujxjmcb6jgxhpmdwu"
     },
     {
         image: StarnameIcon,
-        name: "Starname"
+        name: "Starname",
+        link: "https://www.starname.me/"
     },
     {
         image: IXOIcon,
-        name: "IXO"
+        name: "IXO",
+        link: "https://www.ixo.world/"
     },
     {
         image: NFTIcon,

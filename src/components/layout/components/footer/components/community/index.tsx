@@ -42,7 +42,9 @@ const Contact = () => {
         }
       >
         <a
-          href={"subscribelink"}
+          href={
+            "https://forbole.us5.list-manage.com/subscribe?u=a1ec5bb20979a8c8db7fc58b2&id=9e47491b93"
+          }
           target="_blank"
           rel="noreferrer"
           style={{ color: theme.palette.custom.basic.black }}
