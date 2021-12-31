@@ -26,7 +26,9 @@ const Portfolio = () => {
       >
         PORTFOLIO
       </Typography>
-      <p>{t("portfolioP")}</p>
+      <Box pb={theme.spacing(0.2)}>
+        <p>{t("portfolioP")}</p>
+      </Box>
 
       <Box className="link">
         <a

@@ -39,10 +39,13 @@ export const useStyles = () => {
           maxWidth: "1200px",
           width: "100%",
           "& h2": {
-            fontSize: theme.spacing(4),
+            fontSize: theme.spacing(9),
           },
           "& h1": {
-            fontSize: theme.spacing(5),
+            fontSize: theme.spacing(9),
+            textShadow: "1px 0 #CCFF00",
+            letterSpacing: "1px",
+            fontWeight: "bold",
           },
           "& p": {
             fontSize: theme.spacing(2.5),

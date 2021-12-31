@@ -33,7 +33,10 @@ const Hero = () => {
       >
         <Typography
           variant="h1"
-          style={{ color: theme.palette.custom.general.main }}
+          style={{
+            color: theme.palette.custom.general.main,
+            fontWeight: 900,
+          }}
         >
           DECENTRALIZED
         </Typography>
