@@ -6,7 +6,7 @@ export const useGetStyles = () => {
     return createStyles({
       root: {
         "&.footer": {
-          background: "#000000",
+          background: "rgba(19,19,22, 0.8)",
           padding: "3rem 1.5rem 4rem",
           color: "black",
           height: "100%",

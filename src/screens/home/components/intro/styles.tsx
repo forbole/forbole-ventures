@@ -8,6 +8,10 @@ export const useStyles = () => {
       root: {
         color: "#FFFFFF",
         fontWeight: 100,
+        "& .bigH1": {
+          textShadow: "1px 0 #CCFF00",
+          letterSpacing: "1px",
+        },
         "& h1": {
           fontWeight: 900,
         },
@@ -82,12 +86,14 @@ export const useStyles = () => {
           maxWidth: "1200px",
           "& .bigH1": {
             fontSize: theme.spacing(9),
+            textShadow: "2px 0 #CCFF00",
+            letterSpacing: "2px",
           },
           "& h2": {
             fontSize: theme.spacing(5),
           },
           "& .intro": {
-            fontSize: theme.spacing(3),
+            fontSize: theme.spacing(2.5),
           },
         },
       },

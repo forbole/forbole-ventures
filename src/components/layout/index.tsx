@@ -38,7 +38,7 @@ const Layout = (props: LayoutProps) => {
   const type = "website";
   const description =
     "The private investment arm of Forbole to invest in promising crypto projects.";
-  const imageUrl = `${baseUrl}/images/icons/favicon-96x96.png`;
+  const imageUrl = `${baseUrl}/images/icons/favicon-32x32.png`;
 
   return (
     <>

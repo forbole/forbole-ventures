@@ -6,10 +6,11 @@ export const useGetStyles = () => {
     return createStyles({
       root: {
         backgroundImage: "url('/images/background-mobile.svg')",
-        // backgroundSize: "cover",
-        backgroundPosition: "0% 0%",
-        // backgroundRepeat: "no-repeat",
-        backgroundSize: "100%",
+        backgroundSize: "cover",
+        backgroundPosition: "0% -250px",
+        backgroundRepeat: "no-repeat",
+        // backgroundSize: "100%",
+        [theme.breakpoints.up("md")]: { backgroundPosition: "0% -900px" },
         [theme.breakpoints.up("lg")]: {
           backgroundImage: "url('/images/background-desktop.svg')",
           justifyContent: "flex-start",

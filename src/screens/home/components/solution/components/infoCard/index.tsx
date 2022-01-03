@@ -37,12 +37,12 @@ const InfoCard = () => {
                 href="https://www.desmos.network/"
                 target="_blank"
                 rel="noreferrer"
+                style={{ display: "inline", textDecoration: "underline" }}
               >
-                <Box style={{ fontSize: theme.spacing(3) }}>
-                  Desmos Profiles
-                </Box>
+                {/* <Box component="span" style={{ fontSize: theme.spacing(3) }}> */}
+                Desmos Profiles{/* </Box> */}
               </a>
-            </Box>
+            </Box>{" "}
             as their user profiles
           </Typography>
         </div>
