@@ -23,7 +23,7 @@ const Hero = () => {
           paddingBottom: isDesktop ? theme.spacing(1.5) : 0,
         }}
       >
-        Let&apos;s build the{" "}
+        Let&apos;s Build The{" "}
       </Typography>
       <Box
         display="flex"
