@@ -53,7 +53,7 @@ const Solution = () => {
         <Divider
           orientation="vertical"
           style={{
-            color: theme.palette.custom.general.main,
+            backgroundColor: theme.palette.custom.general.main,
             height: theme.spacing(2),
           }}
         />
@@ -65,7 +65,7 @@ const Solution = () => {
             paddingLeft: theme.spacing(0.5),
           }}
         >
-          These all for reference only and decisions will be made on a
+          These are all for reference only and decisions will be made on a
           case-by-case basis.
         </Typography>
       </Box>
