@@ -9,6 +9,8 @@ export const useStyles = () => {
         fontWeight: 100,
         "& h1": {
           fontWeight: 900,
+          textShadow: "1px 0 #CCFF00",
+          letterSpacing: "1px",
         },
         "& .hero__content": {
           display: "flex",
@@ -43,8 +45,8 @@ export const useStyles = () => {
           },
           "& h1": {
             fontSize: theme.spacing(9),
-            textShadow: "1px 0 #CCFF00",
-            letterSpacing: "1px",
+            textShadow: "2px 0 #CCFF00",
+            letterSpacing: "2px",
             fontWeight: "bold",
           },
           "& p": {

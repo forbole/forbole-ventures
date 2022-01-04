@@ -58,7 +58,7 @@ const Intro = () => {
         className="bigH1"
         style={{
           color: theme.palette.custom.general.main,
-          fontSize: isDesktop ? theme.spacing(10) : theme.spacing(5),
+          // fontSize: isDesktop ? theme.spacing(10) : theme.spacing(5),
         }}
       >
         NEW GENERATION INTERNET

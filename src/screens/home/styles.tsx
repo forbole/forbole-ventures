@@ -8,13 +8,8 @@ export const useGetStyles = () => {
       root: {
         fontSize: "1rem",
         "& .home-page__hero": {
-          // height: "100vh",
           minHeight: "100vh",
           backgroundColor: "transparent",
-          // backgroundImage: "url('/images/desmos-hero.png')",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "250%",
-          backgroundPosition: "right -10px",
           padding: theme.spacing(3, 3, 0),
           display: "flex",
           alignItems: "center",

@@ -6,13 +6,15 @@ export const useGetStyles = () => {
     return createStyles({
       root: {
         backgroundImage: "url('/images/background-mobile.svg')",
-        backgroundSize: "100%",
-        backgroundPosition: "0% 0%",
+        backgroundSize: "cover",
+        backgroundPosition: "0% -250px",
         backgroundRepeat: "no-repeat",
-        position: "relative",
+        // backgroundSize: "100%",
+        [theme.breakpoints.up("md")]: { backgroundPosition: "0% -900px" },
         [theme.breakpoints.up("lg")]: {
           backgroundImage: "url('/images/background-desktop.svg')",
           justifyContent: "flex-start",
+          backgroundPosition: "0% -400px",
         },
         "& .nav__container": {
           display: "flex",
