@@ -49,6 +49,26 @@ const Solution = () => {
       <div>
         <InfoCard />
       </div>
+      <Box display="flex" flexDirection="row">
+        <Divider
+          orientation="vertical"
+          style={{
+            color: theme.palette.custom.general.main,
+            height: theme.spacing(2),
+          }}
+        />
+        <Typography
+          variant="body2"
+          style={{
+            fontSize: theme.spacing(1.5),
+            padding: 0,
+            paddingLeft: theme.spacing(0.5),
+          }}
+        >
+          These all for reference only and decisions will be made on a
+          case-by-case basis.
+        </Typography>
+      </Box>
     </div>
   );
 };
