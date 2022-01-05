@@ -43,14 +43,14 @@ jobs:
             org.opencontainers.image.revision=${{ github.sha }}
       - name: Deploy to Akash 🌐
         env:
-          AKASH_WEBHOOK_URL: ${{ secrets.AKASH_WEBHOOK_URL }}
+          VENTURES_WEBHOOK_URL: ${{ secrets.VENTURES_WEBHOOK_URL }}
           AKASH_WEBHOOK_SECRET: ${{ secrets.AKASH_WEBHOOK_SECRET }}
         run: |
             BRANCH=${GITHUB_REF}
             WEBHOOK_URL=''
-            if [[ $GITHUB_REF == refs/tags/desmos-morpheus-apollo-1* ]]; then
-              echo 'Deploying to Desmos morpheus-apollo-1'
-              WEBHOOK_URL=$DESMOS_AKASH_WEBHOOK_URL
+            if [[ $GITHUB_REF == refs/tags/v* ]]; then
+              echo 'Deploying to forbole ventures'
+              WEBHOOK_URL=$VENTURES_WEBHOOK_URL
             fi
               curl -i -X POST -H "Content-Type: application/json" -d '{"parameters":{"tag": "${{ steps.prep.outputs.version }}"}}' -k $WEBHOOK_URL -u "deploy:$AKASH_WEBHOOK_SECRET"
 
