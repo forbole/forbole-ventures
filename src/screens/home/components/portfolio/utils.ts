@@ -10,6 +10,7 @@ import QuicksilverIcon from "@assets/quicksilver-protocol.svg";
 import RegenIcon from "@assets/regen.svg";
 import SolanaIcon from "@assets/solana.svg";
 import StarnameIcon from "@assets/starname.svg";
+import WormholeIcon from "@assets/wormhole.svg";
 import IXOIcon from "@assets/ixo.svg";
 import NFTIcon from "@assets/nft.svg";
 
@@ -39,6 +40,11 @@ export const networkItems = [
         image: EMoneyIcon, 
         name: "e-Money",
         link: "https://www.e-money.com/"
+    },    
+    {
+        image: IXOIcon,
+        name: "IXO",
+        link: "https://www.ixo.world/"
     },
     {
         image: KavaIcon,
@@ -78,9 +84,9 @@ export const networkItems = [
         link: "https://www.starname.me/"
     },
     {
-        image: IXOIcon,
-        name: "IXO",
-        link: "https://www.ixo.world/"
+        image: WormholeIcon,
+        name: "Wormhole",
+        link: "https://wormhole.com/"
     },
     {
         image: NFTIcon,
