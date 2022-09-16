@@ -24,7 +24,7 @@ export const networkItems = [
     },
     {
         image: DataXIcon, 
-        name: "datax.io",
+        name: "Datax.io",
         link: "https://datax.io/"
     },
     {
