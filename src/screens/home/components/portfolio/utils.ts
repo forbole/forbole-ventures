@@ -6,6 +6,7 @@ import EMoneyIcon from "@assets/e-money.svg";
 import KavaIcon from "@assets/kava.svg";
 import OasisIcon from "@assets/oasis.svg";
 import OnomyIcon from "@assets/onomy-protocol.svg";
+import QuicksilverIcon from "@assets/quicksilver-protocol.svg";
 import RegenIcon from "@assets/regen.svg";
 import SolanaIcon from "@assets/solana.svg";
 import StarnameIcon from "@assets/starname.svg";
@@ -54,6 +55,11 @@ export const networkItems = [
         image: OnomyIcon,
         name: "Onomy Protocol",
         link: "https://onomy.io/",
+    },
+    {
+        image: QuicksilverIcon,
+        name: "Quicksilver Protocol",
+        link: "https://quicksilver.zone/",
     },
     {
         image: RegenIcon,

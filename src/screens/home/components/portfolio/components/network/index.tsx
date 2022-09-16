@@ -37,7 +37,13 @@ const Network = (props: INetworkProps) => {
           </Avatar>
           <Typography
             variant="body1"
-            style={{ fontWeight: 800, paddingTop: '0.5rem', color: '#FFFFFF' }}
+            style={{
+              fontWeight: 700,
+              paddingTop: '0.5rem',
+              color: '#FFFFFF',
+              fontSize: isDesktop ? '18px' : '14px',
+              textAlign: 'center',
+            }}
           >
             {name}
           </Typography>
