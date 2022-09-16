@@ -2,14 +2,15 @@ import AkashIcon from "@assets/akash.svg";
 import BitsongIcon from "@assets/bitsong.svg";
 import DataXIcon from "@assets/datax.svg";
 import DymensionIcon from "@assets/dymension.svg";
-import EMoneyIcon from "@assets/e-money.svg"
-import KavaIcon from "@assets/kava.svg"
-import OasisIcon from "@assets/oasis.svg"
-import RegenIcon from "@assets/regen.svg"
-import SolanaIcon from "@assets/solana.svg"
-import StarnameIcon from "@assets/starname.svg"
-import IXOIcon from "@assets/ixo.svg"
-import NFTIcon from "@assets/nft.svg"
+import EMoneyIcon from "@assets/e-money.svg";
+import KavaIcon from "@assets/kava.svg";
+import OasisIcon from "@assets/oasis.svg";
+import OnomyIcon from "@assets/onomy-protocol.svg";
+import RegenIcon from "@assets/regen.svg";
+import SolanaIcon from "@assets/solana.svg";
+import StarnameIcon from "@assets/starname.svg";
+import IXOIcon from "@assets/ixo.svg";
+import NFTIcon from "@assets/nft.svg";
 
 export const networkItems = [
     {
@@ -48,6 +49,11 @@ export const networkItems = [
         name: "Oasis Protocol",
         link: "https://oasisprotocol.org/",
         why: "https://medium.com/oasis-protocol-project/node-operator-spotlight-forbole-8d212786ca7d"
+    },
+    {
+        image: OnomyIcon,
+        name: "Onomy Protocol",
+        link: "https://onomy.io/",
     },
     {
         image: RegenIcon,
