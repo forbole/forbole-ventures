@@ -1,6 +1,7 @@
 import AkashIcon from "@assets/akash.svg";
 import BitsongIcon from "@assets/bitsong.svg";
 import DataXIcon from "@assets/datax.svg";
+import DymensionIcon from "@assets/dymension.svg";
 import EMoneyIcon from "@assets/e-money.svg"
 import KavaIcon from "@assets/kava.svg"
 import OasisIcon from "@assets/oasis.svg"
@@ -26,6 +27,11 @@ export const networkItems = [
         image: DataXIcon, 
         name: "Datax.io",
         link: "https://datax.io/"
+    },
+    {
+        image: DymensionIcon, 
+        name: "Dymension",
+        link: "https://www.dymension.xyz/"
     },
     {
         image: EMoneyIcon, 
