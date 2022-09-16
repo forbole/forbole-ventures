@@ -1,9 +1,9 @@
-import React from "react";
-import { Box, Button, Typography, useTheme } from "@material-ui/core";
-import ArrowIcon from "@assets/icon-arrow.svg";
-import { useStyles } from "./styles";
-import { SocialMedia } from "@src/components";
-import { CustomTheme } from "@src/styles";
+import React from 'react';
+import { Box, Button, Typography, useTheme } from '@material-ui/core';
+import ArrowIcon from '@assets/icon-arrow.svg';
+import { useStyles } from './styles';
+import { SocialMedia } from '@src/components';
+import { CustomTheme } from '@src/styles';
 
 const Contact = () => {
   const classes = useStyles();
@@ -32,18 +32,19 @@ const Contact = () => {
         style={{
           backgroundColor: theme.palette.custom.general.main,
           color: theme.palette.custom.basic.black,
+          fontWeight: 900,
         }}
         endIcon={
           <ArrowIcon
-            height={theme.spacing(2)}
-            width={theme.spacing(2)}
+            height={theme.spacing(1.2)}
+            width={theme.spacing(1.7)}
             fill={theme.palette.custom.basic.black}
           />
         }
       >
         <a
           href={
-            "https://forbole.us5.list-manage.com/subscribe?u=a1ec5bb20979a8c8db7fc58b2&id=9e47491b93"
+            'https://forbole.us5.list-manage.com/subscribe?u=a1ec5bb20979a8c8db7fc58b2&id=9e47491b93'
           }
           target="_blank"
           rel="noreferrer"
