@@ -34,7 +34,7 @@ export const common = {
     },
   },
   typography: {
-    fontFamily: '"Poppins", sans-serif',
+    fontFamily: '"Manrope", sans-serif',
     h1: {
       fontSize: '2rem',
       letterSpacing: 0.25,

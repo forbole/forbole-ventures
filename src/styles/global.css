@@ -1,12 +1,4 @@
-@font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Manrope-Light.ttf");
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Manrope-Light.ttf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
 
 html {
   font-size: 16px;
@@ -25,7 +17,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
 a {
@@ -39,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 500;
   margin: 0;
 }

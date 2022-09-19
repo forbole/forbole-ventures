@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 // import { useTranslation } from "i18n";
-import { Box, Typography, useTheme } from "@material-ui/core";
-import useTranslation from "next-translate/useTranslation";
-import { useGetScreenSizeHook } from "@hooks";
-import { CustomTheme } from "@styles";
-import { CardGrid } from "./components";
-import { useStyles } from "./styles";
-import ArrowIcon from "@assets/icon-arrow.svg";
+import { Box, Typography, useTheme } from '@material-ui/core';
+import useTranslation from 'next-translate/useTranslation';
+import { useGetScreenSizeHook } from '@hooks';
+import { CustomTheme } from '@styles';
+import { CardGrid } from './components';
+import { useStyles } from './styles';
+import ArrowIcon from '@assets/icon-arrow.svg';
 
 const VC = () => {
-  const { t, lang } = useTranslation("common");
+  const { t, lang } = useTranslation('common');
   const classes = useStyles();
   const theme: CustomTheme = useTheme();
   const { isDesktop } = useGetScreenSizeHook();
@@ -23,7 +23,7 @@ const VC = () => {
           fontSize: isDesktop ? theme.spacing(10) : theme.spacing(5),
         }}
       >
-        We are not a{" "}
+        We are not only a{' '}
         <Box
           component="span"
           fontWeight="fontWeightBold"
