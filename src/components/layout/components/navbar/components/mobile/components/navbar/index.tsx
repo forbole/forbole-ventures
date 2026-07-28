@@ -1,11 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
 import Link from "next/link";
-import classnames from "classnames";
-import { ExpandMore } from "@material-ui/icons";
-import DesmosLogo from "@assets/desmos.svg";
 import VenturesLogo from "@assets/forbole-ventures.svg";
 import { NavbarProps } from "./types";
 import { useStyles } from "./styles";
@@ -14,7 +8,7 @@ import { useStyles } from "./styles";
 const Navbar = (props: NavbarProps) => {
   // const { isOpen, color, displayBackground } = props;
   const classes = useStyles();
-  const { isOpen, toggleNavMenus, logoURL } = props;
+  const { logoURL } = props;
 
   return (
     <div
@@ -23,11 +17,8 @@ const Navbar = (props: NavbarProps) => {
       // color={color}
       // displayBackground={displayBackground}
     >
-      <Link href={logoURL || "/"}>
-        <a className={classes.a}>
-          {/* <DesmosLogo className={classes.logo} /> */}
-          <VenturesLogo className={classes.logo} />
-        </a>
+      <Link href={logoURL || "/"} className={classes.a}>
+        <VenturesLogo className={classes.logo} />
       </Link>
 
       {/* Hamburger Menu not requested for this version yet */}

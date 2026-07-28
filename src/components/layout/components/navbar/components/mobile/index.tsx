@@ -4,14 +4,12 @@ import { useGetComponentDimension } from "@hooks";
 import { Menu, Navbar } from "./components";
 import { useMobileNavHook } from "./hooks";
 import { useStyles } from "./styles";
-import { IMobileNav, IMobileNavBarIconCSS } from "./types";
-
 const MobileNav: React.FC<{
   className?: string;
-  title: string;
+  title?: string;
   logoURL: string;
   displayBackground: boolean;
-}> = ({ className, title, displayBackground, logoURL }) => {
+}> = ({ className, displayBackground, logoURL }) => {
   // const { isOpen, toggle } = useMobileNavHook();
   const { ref: heightRef, height } = useGetComponentDimension();
   const { isMenu, isOpen, toggleNavMenus } = useMobileNavHook();

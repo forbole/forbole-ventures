@@ -1,9 +1,8 @@
 import React from "react";
-import useTranslation from "next-translate/useTranslation";
-import { Box, Typography, useTheme } from "@material-ui/core";
+import { useTranslation } from "@hooks";
+import { Box, Typography, useTheme } from "@mui/material";
 import { useStyles } from "./styles";
 import { CustomTheme } from "@src/styles";
-import FooterLogo from "@assets/forbole-ventures.svg";
 
 export interface ItemsGridProps {
   header?: string;
@@ -12,7 +11,7 @@ export interface ItemsGridProps {
 }
 
 const ItemGrid = (props: ItemsGridProps) => {
-  const { t, lang } = useTranslation("common");
+  const { t } = useTranslation();
   const { header, name, url } = props;
   const theme: CustomTheme = useTheme();
   const classes = useStyles();

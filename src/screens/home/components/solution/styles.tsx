@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/styles";
 // import { getMinMediaQuery } from "@styles";
 
 export const useStyles = () => {

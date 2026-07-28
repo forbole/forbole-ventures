@@ -1,8 +1,8 @@
-import { makeStyles, createStyles } from "@material-ui/styles";
+import { makeStyles, createStyles } from "@mui/styles";
 import { getMinMediaQuery } from "@styles";
 
 export const useGetStyles = () => {
-  const useStyles = makeStyles((theme: any) => {
+  const useStyles = makeStyles((theme) => {
     return createStyles({
       root: {
         "&.footer": {

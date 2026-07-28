@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { useStyles } from "./styles";
-import DesmosLogo from "@assets/desmos.svg";
 import VenturesLogo from "@assets/forbole-ventures.svg";
 
 const Desktop: React.FC<{
@@ -12,10 +11,8 @@ const Desktop: React.FC<{
   return (
     <div className={className}>
       <div className={classes.root}>
-        <Link href={logoURL}>
-          <a className={classes.a}>
-            <VenturesLogo className={classes.logo} />
-          </a>
+        <Link href={logoURL} className={classes.a}>
+          <VenturesLogo className={classes.logo} />
         </Link>
       </div>
     </div>

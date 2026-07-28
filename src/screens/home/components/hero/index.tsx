@@ -1,16 +1,10 @@
-import React from "react";
-// import { useTranslation } from "i18n";
-import { Box, Typography, useTheme } from "@material-ui/core";
-import useTranslation from "next-translate/useTranslation";
-import { Layout, SocialMedia } from "@components";
+import { Box, Typography, useTheme } from "@mui/material";
 import { useStyles } from "./styles";
 import { CustomTheme } from "@styles";
-import { useGetScreenSizeHook } from "@hooks";
-import HeroSlogan from "@assets/hero-slogan.svg";
-import ArrowIcon from "@assets/icon-arrow.svg";
+import { useGetScreenSizeHook, useTranslation } from "@hooks";
 
 const Hero = () => {
-  const { t, lang } = useTranslation("common");
+  const { t } = useTranslation();
   const classes = useStyles();
   const theme: CustomTheme = useTheme();
   const { isDesktop } = useGetScreenSizeHook();

@@ -3,8 +3,6 @@ import {
   EmailIcon,
   LinkedinIcon,
   TwitterIcon,
-  GithubIcon,
-  MediumIcon,
 } from "@icons";
 
 export const socialMediaLinks: {

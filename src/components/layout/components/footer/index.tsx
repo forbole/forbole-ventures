@@ -1,18 +1,13 @@
 import React from "react";
-import Link from "next/link";
-import { Box, useTheme } from "@material-ui/core";
-import useTranslation from "next-translate/useTranslation";
+import { Box, useTheme } from "@mui/material";
 import { Logo, ItemGrid, Contact, Community } from "./components";
-import { SocialMedia } from "@components";
 import { companyItems, productItems } from "./utils";
 import { useGetStyles } from "./styles";
-import { useGetScreenSizeHook } from "@hooks";
+import { useGetScreenSizeHook, useTranslation } from "@hooks";
 import { CustomTheme } from "@src/styles";
 
-const Footer: React.FC<{
-  baseURL: string;
-}> = ({ baseURL }) => {
-  const { t } = useTranslation("common");
+const Footer = () => {
+  const { t } = useTranslation();
   const { isDesktop } = useGetScreenSizeHook();
   const { classes } = useGetStyles();
   const theme: CustomTheme = useTheme();
@@ -70,10 +65,10 @@ const Footer: React.FC<{
             alignItems="flex-start"
             pr={isDesktop ? theme.spacing(1) : 0}
           >
-            {companyItems.map((item, i) => {
+            {companyItems.map((item) => {
               return (
                 <ItemGrid
-                  key={i}
+                  key={item.header ?? item.key}
                   header={item.header}
                   name={item.key}
                   url={item.url}
@@ -82,10 +77,10 @@ const Footer: React.FC<{
             })}
           </Box>
           <Box display="flex" flexDirection="column" alignItems="flex-start">
-            {productItems.map((item, i) => {
+            {productItems.map((item) => {
               return (
                 <ItemGrid
-                  key={i}
+                  key={item.header ?? item.key}
                   header={item.header}
                   name={item.key}
                   url={item.url}

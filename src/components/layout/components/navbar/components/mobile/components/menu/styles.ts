@@ -1,5 +1,5 @@
-import { makeStyles } from '@material-ui/core/styles';
-import Color from 'color';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 
 export const useStyles = () => {
   const styles = makeStyles(
@@ -47,7 +47,7 @@ export const useStyles = () => {
           },
         },
         drawer: {
-          background: Color(theme.palette.background.paper).alpha(0.5).string(),
+          background: alpha(theme.palette.background.paper, 0.5),
         },
       });
     },

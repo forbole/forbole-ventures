@@ -1,30 +1,29 @@
-FROM node:14.15.0-alpine
+FROM node:22-alpine AS dependencies
 
-ENV PORT 3000
-
-# Install git for ui and internal packages
-RUN apk add --no-cache git
-
-# Set app directory
 WORKDIR /app
 
-# Add PM2
-RUN yarn global add pm2
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
 
-# Installing dependencies
-COPY package*.json ./
-COPY yarn* ./
-RUN ["yarn", "install", "--ignore-engines"]
+FROM node:22-alpine AS builder
+WORKDIR /app
 
-# Copying source files
+COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
+RUN yarn build
 
-ENV ENV "production"
-ENV PORT 3000
+FROM node:22-alpine AS runner
 
-# Building app
-RUN ["yarn", "build"]
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
+
+WORKDIR /app
+
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+
 EXPOSE 3000
 
-# Running the app
-CMD ["pm2-runtime", "dist/index.js"]
+CMD ["node", "server.js"]

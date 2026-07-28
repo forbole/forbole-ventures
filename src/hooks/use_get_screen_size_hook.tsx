@@ -1,66 +1,36 @@
 import { useState, useEffect } from "react";
-import { useTheme } from "@material-ui/core/styles";
+import { useTheme } from "@mui/material/styles";
 
 function useGetScreenSizeHook() {
-  const isClient = typeof window === "object";
+  const [windowSize, setWindowSize] = useState<{
+    width?: number;
+    height?: number;
+  }>({});
+  const theme = useTheme();
 
-  function getSize() {
-    return {
-      width: isClient ? window.innerWidth : undefined,
-      height: isClient ? window.innerHeight : undefined,
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
     };
-  }
 
-  const [windowSize, setWindowSize] = useState(getSize);
-  const [isDesktop, setIsDesktop] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
-  const theme: any = useTheme();
-
-  useEffect((): any => {
-    if (!isClient) {
-      return false;
-    }
-
-    function handleResize() {
-      setWindowSize(getSize());
-    }
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    const width = windowSize?.width ?? 0;
-    // is mobile
-    if (width < theme?.breakpoints?.values?.tablet) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-    // is tablet
-    if (
-      width >= theme?.breakpoints?.values?.tablet &&
-      width < theme?.breakpoints?.values?.desktop
-    ) {
-      setIsTablet(true);
-    } else {
-      setIsTablet(false);
-    }
-
-    // is desktop
-    if (width >= theme?.breakpoints?.values?.desktop) {
-      setIsDesktop(true);
-    } else {
-      setIsDesktop(false);
-    }
-  }, [windowSize.width]);
+  const width = windowSize.width ?? 0;
+  const tablet = theme.breakpoints.values.tablet;
+  const desktop = theme.breakpoints.values.desktop;
 
   return {
     windowSize,
-    isDesktop,
-    isTablet,
-    isMobile,
+    isDesktop: width >= desktop,
+    isTablet: width >= tablet && width < desktop,
+    isMobile: width < tablet,
   };
 }
 

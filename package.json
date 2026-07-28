@@ -1,48 +1,49 @@
 {
-  "name": "desmos-website",
+  "name": "forbole-ventures",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "resolutions": {
+    "@babel/runtime": "7.29.7",
+    "@opennextjs/cloudflare/**/minimatch": "10.2.6",
+    "postcss": "8.5.24",
+    "sharp": "0.35.3"
+  },
   "scripts": {
-    "dev": "nodemon",
-    "build": "npm run build:next && npm run build:server",
-    "build:server": "tsc --project tsconfig.server.json",
-    "build:next": "next build",
-    "start": "ENV=production node dist/index.js",
-    "type-check": "tsc",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx"
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint .",
+    "optimize:assets": "svgo --folder src/assets --recursive --multipass && svgo --folder public/images --recursive --multipass"
   },
   "dependencies": {
-    "@material-ui/core": "^4.12.3",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/styles": "^4.11.4",
-    "@n8tb1t/use-scroll-position": "^2.0.3",
-    "@svgr/webpack": "^5.5.0",
-    "axios": "^0.21.1",
-    "classnames": "^2.3.1",
-    "color": "^4.0.1",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "framer-motion": "^4.1.17",
-    "next": "11.0.1",
-    "next-i18next": "^6.0.2",
-    "next-seo": "^4.28.1",
-    "next-translate": "^1.0.7",
-    "nodemon": "^2.0.12",
-    "ramda": "^0.27.1",
-    "react": "^17.0.2",
-    "react-countup": "^6.1.0",
-    "react-dom": "17.0.2",
-    "react-i18next": "^11.7.2",
-    "validator": "^13.6.0"
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "7.3.11",
+    "@mui/material": "7.3.11",
+    "@mui/styles": "^6.4.8",
+    "@opennextjs/cloudflare": "^1.20.2",
+    "classnames": "^2.5.1",
+    "next": "16.2.12",
+    "react": "19.2.8",
+    "react-countup": "^6.5.3",
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.24",
-    "@types/node": "^16.4.10",
-    "@types/react": "^17.0.15",
-    "@types/react-dom": "^17.0.9",
-    "eslint": "7.31.0",
-    "eslint-config-next": "11.0.1",
-    "ts-node": "^10.1.0",
-    "typescript": "^4.3.5"
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^22.20.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.2.12",
+    "svgo": "^4.0.2",
+    "typescript": "6.0.3",
+    "wrangler": "^4.114.0"
   }
 }

@@ -1,5 +1,3 @@
-import React from 'react';
-import Image from 'next/image';
 import {
   Box,
   Divider,
@@ -7,17 +5,14 @@ import {
   ListItem,
   Typography,
   useTheme,
-} from '@material-ui/core';
-import { useGetScreenSizeHook } from '@hooks';
+} from '@mui/material';
+import { useGetScreenSizeHook, useTranslation } from '@hooks';
 import { CustomTheme } from '@styles';
-import useTranslation from 'next-translate/useTranslation';
 import { useStyles } from './styles';
 import CountUp from 'react-countup';
-import LeftDotIcon from '@assets/intro-left-dot.svg';
-import RightDotIcon from '@assets/intro-right-dot.svg';
 
 const Intro = () => {
-  const { t, lang } = useTranslation('common');
+  const { t } = useTranslation();
   const classes = useStyles();
   const theme: CustomTheme = useTheme();
   const { isDesktop } = useGetScreenSizeHook();

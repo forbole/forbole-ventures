@@ -1,18 +1,12 @@
 import React from "react";
 // import { useTranslation } from "i18n";
-import { Box, useTheme } from "@material-ui/core";
-import useTranslation from "next-translate/useTranslation";
-import { Layout, SocialMedia } from "@components";
+import { Box } from "@mui/material";
+import { Layout } from "@components";
 import { useGetStyles } from "./styles";
-import LazyShow from "./hooks";
 import { Hero, Intro, Solution, Portfolio, VC } from "./components";
 
 const Home = () => {
-  const { t, lang } = useTranslation();
-  // const { t } = useTranslation(["home", "common"]);
   const { classes } = useGetStyles();
-  const theme = useTheme();
-  // const { networks } = useHomeHook();
 
   return (
     <Layout className={`${classes.root} home-page__container`}>

@@ -1,47 +1,60 @@
-<div style="
-  padding: 1rem 0;
-">
-<p align="center">
-  <img src="/public/images/icons/android-chrome-192x192.png" style="
-    width: 100px
-  "/>
-</p>
+# Forbole Ventures
 
-# Forbole Ventures Official Website
+The official website for [Forbole Ventures](https://ventures.forbole.com/).
 
-Official website of Forbole Ventures
+## Requirements
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- Node.js 20.9 or newer
+- Yarn 1.x
 
-## Getting Started
-
-First, run the development server:
+## Local development
 
 ```bash
-npm run dev
-# or
+yarn install
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Quality checks
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+yarn type-check
+yarn lint
+yarn build
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To optimize SVG assets after adding or changing artwork:
 
-## Learn More
+```bash
+yarn optimize:assets
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project builds a standalone Next.js server and includes a multi-stage
+Dockerfile:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+docker build -t forbole-ventures .
+docker run --rm -p 3000:3000 forbole-ventures
+```
 
-## Deploy on Vercel
+Set `NEXT_PUBLIC_URL` when deploying to a different hostname so canonical and
+social metadata use that origin.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Cloudflare deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The site is packaged for Cloudflare Workers with OpenNext. To test the Worker
+runtime locally:
+
+```bash
+yarn preview
+```
+
+The GitHub Actions workflow in `.github/workflows/deploy-cloudflare.yml`
+deploys pushes to `master` and also supports manual runs. Configure these
+encrypted repository secrets before running it:
+
+- `CLOUDFLARE_API_TOKEN`: a token with the Edit Cloudflare Workers permission
+- `CLOUDFLARE_ACCOUNT_ID`: the target Cloudflare account ID

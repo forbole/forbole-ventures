@@ -1,6 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles";
-import { FullscreenExit } from "@material-ui/icons";
-import { getMinMediaQuery } from "@styles";
+import { makeStyles } from "@mui/styles";
 
 export const useStyles = () => {
   const styles = makeStyles((theme) => {

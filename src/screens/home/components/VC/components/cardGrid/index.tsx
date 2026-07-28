@@ -1,27 +1,17 @@
-import React from "react";
-// import { useTranslation } from "i18n";
 import { useGetScreenSizeHook } from "@hooks";
-import IBCIcon from "@assets/ibc.svg";
-import EcoIcon from "@assets/eco.svg";
 import ValidatorIcon from "@assets/validator.svg";
 import ExplorerIcon from "@assets/explorer.svg";
 import DiamondIcon from "@assets/diamond.svg";
-import useTranslation from "next-translate/useTranslation";
 import { useStyles } from "./styles";
 import {
   Box,
   Card,
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
   Typography,
   useTheme,
-} from "@material-ui/core";
+} from "@mui/material";
 import { CustomTheme } from "@src/styles";
 
 const CardGrid = () => {
-  const { t, lang } = useTranslation("common");
   const classes = useStyles();
   const { isDesktop } = useGetScreenSizeHook();
   const theme: CustomTheme = useTheme();
@@ -111,8 +101,8 @@ const CardGrid = () => {
             fontWeight="fontWeightBold"
             style={{ color: theme.palette.custom.basic.white }}
           >
-            Akash, Cosmos Hub, Band Protocol, e-Money, Flow, Kava, Oasis, Regen
-            Network, Solana, Starname, Terra
+            Akash, Cosmos Hub, Band Protocol, Flow, Kava, Oasis, Regen Network,
+            Solana, Terra
           </Box>{" "}
           and more.
         </Typography>

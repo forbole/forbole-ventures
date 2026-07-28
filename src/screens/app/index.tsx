@@ -1,45 +1,38 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import Head from "next/head";
 import { AppProps } from "next/app";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import CssBaseline from "@mui/material/CssBaseline";
 // import { ApolloProvider } from "@apollo/client";
 // import client from "@graphql";
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-// import { ToastContainer } from "react-toastify";
+import { ThemeProvider as MaterialThemeProvider } from "@mui/material/styles";
+import { ThemeProvider as StylesThemeProvider } from "@mui/styles";
 import { darkTheme, lightTheme } from "@styles";
-import { GlobalContext } from "@src/contexts";
-import appWithTranslation from "../../../i18n";
-import { useGetStyles } from "./styles";
-// import "react-toastify/dist/ReactToastify.css";
 
 export const useLayoutHook = () => {
-  const [isDarkMode, setMode] = useState<boolean | undefined>(false);
+  const [isDarkMode, setMode] = useState(false);
 
-  const theme: any = isDarkMode ? darkTheme : lightTheme;
+  const theme = useMemo(
+    () => (isDarkMode ? darkTheme : lightTheme),
+    [isDarkMode]
+  );
 
   return {
     isDarkMode,
     setMode,
-    theme: createTheme(theme),
+    theme,
   };
 };
 
 // This default export is required in a new `pages/_app.js` file.
 function MyApp({ Component, pageProps }: AppProps) {
   const { theme } = useLayoutHook();
-  const { classes } = useGetStyles();
   React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
+      jssStyles.remove();
     }
   }, []);
-
-  // =============================
-  // global state
-  // =============================
-  const globalState = {};
 
   return (
     <>
@@ -70,26 +63,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#ccff00" />
         <meta name="theme-color" content="#000000" />
       </Head>
-      {/* <ApolloProvider client={client}> */}
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <GlobalContext.Provider value={globalState}>
+      <MaterialThemeProvider theme={theme}>
+        <StylesThemeProvider theme={theme}>
+          <CssBaseline />
           <Component {...pageProps} />
-          {/* <ToastContainer
-              position="top-center"
-              autoClose={5000}
-              hideProgressBar
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              className={classes.toast}
-            /> */}
-        </GlobalContext.Provider>
-      </ThemeProvider>
-      {/* </ApolloProvider> */}
+        </StylesThemeProvider>
+      </MaterialThemeProvider>
     </>
   );
 }

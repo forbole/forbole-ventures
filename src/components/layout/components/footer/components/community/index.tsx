@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box, Button, Typography, useTheme } from '@material-ui/core';
+import { Box, Button, Typography, useTheme } from '@mui/material';
 import ArrowIcon from '@assets/icon-arrow.svg';
 import { useStyles } from './styles';
-import { SocialMedia } from '@src/components';
 import { CustomTheme } from '@src/styles';
 
 const Contact = () => {
@@ -28,6 +27,10 @@ const Contact = () => {
         Want to get updates on Forbole?
       </Typography>
       <Button
+        component="a"
+        href="https://forbole.us5.list-manage.com/subscribe?u=a1ec5bb20979a8c8db7fc58b2&id=9e47491b93"
+        target="_blank"
+        rel="noreferrer"
         variant="contained"
         style={{
           backgroundColor: theme.palette.custom.general.main,
@@ -42,16 +45,7 @@ const Contact = () => {
           />
         }
       >
-        <a
-          href={
-            'https://forbole.us5.list-manage.com/subscribe?u=a1ec5bb20979a8c8db7fc58b2&id=9e47491b93'
-          }
-          target="_blank"
-          rel="noreferrer"
-          style={{ color: theme.palette.custom.basic.black }}
-        >
-          Subscribe
-        </a>
+        Subscribe
       </Button>
     </Box>
   );

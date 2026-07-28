@@ -1,27 +1,24 @@
 import React from "react";
 import classnames from "classnames";
 import Link from "next/link";
-import { Drawer, MenuItem, Typography, Select } from "@material-ui/core";
+import { Drawer, MenuItem } from "@mui/material";
 import { useRouter } from "next/router";
-import useTranslation from "next-translate/useTranslation";
+import { useTranslation } from "@hooks";
 // import { useSettingsContext } from "@contexts";
 // import Language from "@assets/icon-language.svg";
-import ThemeIcon from "@assets/icon-theme.svg";
-import { ExpandMoreOutlined } from "@material-ui/icons";
 import { useStyles } from "./styles";
 import { MenuItems } from "../../..";
-import { useLanguageDrawer, useThemeDrawer } from "./hooks";
+import { useLanguageDrawer } from "./hooks";
 import { MenuProps } from "./types";
 
 const Menu = (props: MenuProps) => {
   const router = useRouter();
-  const { t, lang } = useTranslation("common");
+  const { t, lang } = useTranslation();
   // const { theme, themeList, changeTheme } = useSettingsContext();
 
   const { toggleNavMenus, className } = props;
   const classes = useStyles();
-  const languageOptions = useLanguageDrawer(lang, toggleNavMenus);
-  // console.log("toggle", toggleNavMenus);
+  const languageOptions = useLanguageDrawer();
   // const themeOptions = useThemeDrawer(theme, toggleNavMenus);
   return (
     <>
@@ -36,6 +33,7 @@ const Menu = (props: MenuProps) => {
       >
         <div className={classnames("content")}>
           {router.locales
+            ?.filter(Boolean)
             .filter((l) => l !== lang)
             .map((l) => (
               <div key={l}>
@@ -47,7 +45,10 @@ const Menu = (props: MenuProps) => {
                   locale={l}
                   passHref
                 >
-                  <MenuItem button component="a">
+                  <MenuItem
+                    component="a"
+                    onClick={languageOptions.closeDrawer}
+                  >
                     {t(l)}
                   </MenuItem>
                 </Link>

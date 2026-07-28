@@ -10,15 +10,23 @@ import {
 export const useGetComponentDimension = () => {
   const [height, setHeight] = useState(0);
   const [width, setWidth] = useState(0);
-  const ref: any = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (ref?.current?.clientHeight) {
-      setHeight(ref.current.clientHeight);
-    }
-    if (ref?.current?.clientWidth) {
-      setWidth(ref.current.clientWidth);
-    }
-  }, [ref?.current?.clientHeight]);
+    const element = ref.current;
+    if (!element) return;
+
+    const updateSize = () => {
+      setHeight(element.clientHeight);
+      setWidth(element.clientWidth);
+    };
+
+    updateSize();
+    const observer = new ResizeObserver(updateSize);
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
 
   return {
     width,

@@ -1,8 +1,7 @@
 import React from "react";
 // import { useTranslation } from "i18n";
-import { Box, Typography, useTheme } from "@material-ui/core";
-import useTranslation from "next-translate/useTranslation";
-import { useGetScreenSizeHook } from "@hooks";
+import { Box, Typography, useTheme } from "@mui/material";
+import { useGetScreenSizeHook, useTranslation } from "@hooks";
 import { CustomTheme } from "@styles";
 import { Network } from "./components";
 import { useStyles } from "./styles";
@@ -10,7 +9,7 @@ import { networkItems } from "./utils";
 import ArrowIcon from "@assets/icon-arrow.svg";
 
 const Portfolio = () => {
-  const { t, lang } = useTranslation("common");
+  const { t } = useTranslation();
   const classes = useStyles();
   const theme: CustomTheme = useTheme();
   const { isDesktop } = useGetScreenSizeHook();

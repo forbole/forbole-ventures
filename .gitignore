@@ -11,10 +11,15 @@
 # next.js
 /.next/
 /out/
+/.open-next/
+/.wrangler/
 
 # production
 /build
 /dist
+*.tsbuildinfo
+cloudflare-env.d.ts
+/.playwright-mcp/
 
 # misc
 .DS_Store
@@ -31,6 +36,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+.dev.vars
 
 # vercel
 .vercel

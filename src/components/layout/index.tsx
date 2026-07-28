@@ -1,15 +1,12 @@
 import React from "react";
-// import Logo from '@assets/big-dipper-red.svg';
-import Link from "next/link";
-// import { useTranslation } from "i18n";
-import useTranslation from "next-translate/useTranslation";
-import { NextSeo } from "next-seo";
-import { Languages, Footer, NavBar } from "./components";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { Footer, NavBar } from "./components";
 import { useGetStyles } from "./styles";
 import SocialMedia from "../social_media";
 
 export interface LayoutProps {
-  children: any;
+  children: React.ReactNode;
   className: string;
   color?: string;
   navColor?: string;
@@ -18,85 +15,48 @@ export interface LayoutProps {
 }
 
 const Layout = (props: LayoutProps) => {
-  const { children, className, color, navColor, mobileNavColor, logoURL } =
-    props;
-  const { t, lang } = useTranslation();
-  // const { t } = useTranslation(["home", "common"]);
+  const { children, className, logoURL } = props;
   const { classes } = useGetStyles();
-  // ============================
-  // Meta Tags
-  // ============================
-  let baseUrl = process.env.NEXT_PUBLIC_URL;
-  let currentPath = "";
-
-  if (typeof window === "object") {
-    baseUrl = window?.location?.origin;
-    currentPath = window?.location?.href || "";
-  }
+  const router = useRouter();
+  const baseUrl =
+    process.env.NEXT_PUBLIC_URL?.replace(/\/$/, "") ??
+    "https://ventures.forbole.com";
+  const currentUrl = `${baseUrl}${router.asPath}`;
 
   const title = "Forbole Ventures";
-  const type = "website";
   const description =
     "The private investment arm of Forbole to invest in promising crypto projects.";
-  const imageUrl = `${baseUrl}/images/icons/favicon-32x32.png`;
+  const imageUrl = `${baseUrl}/og.png`;
 
   return (
     <>
-      {/* ============================= */}
-      {/* SEO */}
-      {/* ============================= */}
-      <NextSeo
-        title={title}
-        description={description}
-        openGraph={{
-          type,
-          title,
-          site_name: "Forbole Ventures",
-          url: currentPath,
-          description,
-          images: [
-            {
-              url: imageUrl,
-            },
-          ],
-        }}
-        twitter={{
-          cardType: "summary_large_image",
-        }}
-        additionalMetaTags={[
-          {
-            name: "msapplication-TileColor",
-            content: "#da532c",
-          },
-          {
-            name: "msapplication-config",
-            content: `${baseUrl}/images/icons/browserconfig.xml`,
-          },
-          {
-            name: "theme-color",
-            content: "#ffffff",
-          },
-        ]}
-      />
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:site_name" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={imageUrl} />
+        <meta name="theme-color" content="#000000" />
+        <link rel="canonical" href={currentUrl} />
+      </Head>
       <div className={`${className} ${classes.root}`}>
-        {/* ============================= */}
-        {/* nav */}
-        {/* ============================= */}
         <div className="nav__container">
-          {/* <Link href="/"> */}
-          {/* <a> */}
-          {/* <Logo className="nav__logo" /> */}
-          {/* hi logo */}
-          {/* </a> */}
-          {/* </Link> */}
-          {/* <Languages color={color} /> */}
           <NavBar logoURL={logoURL || "/"} />
         </div>
         {children}
         <div className="socials__container">
           <SocialMedia />
         </div>
-        <Footer baseURL={logoURL || "/"} />
+        <Footer />
       </div>
     </>
   );

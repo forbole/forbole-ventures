@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, useTheme } from "@material-ui/core";
+import { Box, Typography, useTheme } from "@mui/material";
 import { useStyles } from "./styles";
 import { SocialMedia } from "@src/components";
 import { CustomTheme } from "@src/styles";

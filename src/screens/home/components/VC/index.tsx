@@ -1,15 +1,10 @@
-import React from 'react';
-// import { useTranslation } from "i18n";
-import { Box, Typography, useTheme } from '@material-ui/core';
-import useTranslation from 'next-translate/useTranslation';
+import { Box, Typography, useTheme } from '@mui/material';
 import { useGetScreenSizeHook } from '@hooks';
 import { CustomTheme } from '@styles';
 import { CardGrid } from './components';
 import { useStyles } from './styles';
-import ArrowIcon from '@assets/icon-arrow.svg';
 
 const VC = () => {
-  const { t, lang } = useTranslation('common');
   const classes = useStyles();
   const theme: CustomTheme = useTheme();
   const { isDesktop } = useGetScreenSizeHook();

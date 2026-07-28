@@ -1,26 +1,10 @@
-import * as R from 'ramda';
-import { createTheme, Theme, ThemeOptions } from '@material-ui/core';
-import { Palette } from '@material-ui/core/styles/createPalette'
+import { createTheme, Theme, ThemeOptions } from "@mui/material/styles";
 
-interface CustomPalette extends Palette {
-    basic: {
-      black: string,
-      white: string
-    },
-    general: {
-      main: string,
-      icon: string,
-    }, 
-}
-
-export interface CustomTheme extends Theme {
-  palette: CustomPalette
-}
+export type CustomTheme = Theme;
 
 /** Common themes that don't change across light and dark theme */
 export const common = {
   breakpoints: {
-    keys: ['xs', 'sm', 'md', 'lg', 'xl', 'mobile', 'tablet', 'desktop'],
     values: {
       xs: 0,
       sm: 600,
@@ -34,7 +18,8 @@ export const common = {
     },
   },
   typography: {
-    fontFamily: '"Manrope", sans-serif',
+    fontFamily:
+      'Inter, "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif',
     h1: {
       fontSize: '2rem',
       letterSpacing: 0.25,
@@ -95,20 +80,22 @@ export const common = {
 };
 
 /** Custom theme overrides for light mode */
-const lightThemeOverride = {
+const lightThemeOverride: ThemeOptions = {
   ...common,
   palette: {
-    type: 'light',
+    ...common.palette,
+    mode: "light",
   },
 };
 
 /** Custom theme overrides for dark mode */
-const darkThemeOverride = {
+const darkThemeOverride: ThemeOptions = {
   ...common,
   palette: {
-    type: 'dark',
+    ...common.palette,
+    mode: "dark",
   },
 };
 
-export const lightTheme: ThemeOptions = createTheme(R.mergeDeepLeft(lightThemeOverride, common));
-export const darkTheme:ThemeOptions = createTheme(R.mergeDeepLeft(darkThemeOverride, common));
+export const lightTheme = createTheme(lightThemeOverride);
+export const darkTheme = createTheme(darkThemeOverride);

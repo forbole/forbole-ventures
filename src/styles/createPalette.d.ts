@@ -1,83 +1,35 @@
-/* eslint-disable*/
-import * as createPalette from '@material-ui/core/styles/createPalette';
+import type { Theme } from "@mui/material/styles";
 
-declare module '@material-ui/core/styles/createPalette' {
-    interface Custom {
-        basic: {
-            black: string,
-            white: string
-        },
-        general: {
-            main: string,
-            icon: string,
-        }, 
-        fonts: {
-            fontOne: string;
-            fontTwo: string;
-            fontThree: string;
-            fontFour: string;
-            fontFive: string;
-            highlight: string;
-        },
-        primaryData: {
-            one: string;
-            two: string;
-            three: string;
-            four: string;
-        },
-        tags: {
-            zero: string;
-            one: string;
-            two: string;
-            three: string;
-            four: string;
-            five: string;
-            six: string;
-            seven: string;
-            eight: string;
-            nine: string;
-            ten: string;
-            eleven: string;
-            twelve: string,
-            thirteen: string,
-            fourteen: string,
-            fifteen: string,
-            sixteen: string,
-            seventeen: string,
-            eighteen: string,
-            nineteen: string,
-            twenty: string,
-        },
-        charts: {
-            zero: string;
-            one: string;
-            two: string;
-            three: string;
-            four: string;
-            five: string;
-        },
-        condition: {
-            zero: string;
-            one: string;
-            two: string;
-            three: string;
-        },
-        tokenomics: {
-            zero: string;
-            one: string;
-            two: string;
-            three: string;
-        },
-        results: {
-            pass: string;
-            fail: string;
-        }
-    }
+interface CustomPalette {
+  basic: {
+    black: string;
+    white: string;
+  };
+  general: {
+    main: string;
+    icon: string;
+  };
+}
 
-    interface PaletteOptions {
-        custom?: Custom;
-    }
-    interface Palette {
-        custom: Custom;
-    }
+declare module "@mui/material/styles" {
+  interface Palette {
+    custom: CustomPalette;
+  }
+
+  interface PaletteOptions {
+    custom?: CustomPalette;
+  }
+
+  interface BreakpointOverrides {
+    mobile: true;
+    tablet: true;
+    desktop: true;
+    maxWidth: true;
+  }
+}
+
+declare module "@mui/styles/defaultTheme" {
+  // Required module augmentation for the legacy JSS styling API.
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  interface DefaultTheme extends Theme {}
 }

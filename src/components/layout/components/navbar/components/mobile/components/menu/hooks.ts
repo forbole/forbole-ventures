@@ -1,47 +1,14 @@
-import {
-  useState, useEffect,
-} from 'react';
+import { useState } from "react";
 
-export const useLanguageDrawer = (lang: string, toggleNavMenus: () => void) => {
-  const [currentLang, setLang] = useState(lang);
+export const useLanguageDrawer = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  useEffect(() => {
-    if (lang !== currentLang) {
-      setDrawerOpen(false);
-      toggleNavMenus();
-      setLang(lang);
-    }
-  }, [lang]);
-
-  const toggleDrawer = () => {
-    setDrawerOpen(!drawerOpen);
-  };
+  const toggleDrawer = () => setDrawerOpen((isOpen) => !isOpen);
+  const closeDrawer = () => setDrawerOpen(false);
 
   return {
     toggleDrawer,
-    drawerOpen,
-  };
-};
-
-export const useThemeDrawer = (theme: string, toggleNavMenus: () => void) => {
-  const [currentTheme, setTheme] = useState(theme);
-  const [drawerOpen, setDrawerOpen] = useState(false);
-
-  useEffect(() => {
-    if (theme !== currentTheme) {
-      setDrawerOpen(false);
-      toggleNavMenus();
-      setTheme(theme);
-    }
-  }, [theme]);
-
-  const toggleDrawer = () => {
-    setDrawerOpen(!drawerOpen);
-  };
-
-  return {
-    toggleDrawer,
+    closeDrawer,
     drawerOpen,
   };
 };
