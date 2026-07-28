@@ -6,8 +6,8 @@
   "compatibility_flags": ["nodejs_compat"],
   "routes": [
     {
-      "pattern": "ventures.forbole.com",
-      "custom_domain": true
+      "pattern": "ventures.forbole.com/*",
+      "zone_name": "forbole.com"
     }
   ],
   "assets": {
