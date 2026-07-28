@@ -1,67 +1,28 @@
-import {
-  Box,
-  Divider,
-  Typography,
-  useTheme,
-} from "@mui/material";
-import { useGetScreenSizeHook, useTranslation } from "@hooks";
-import { CustomTheme } from "@styles";
+import { useTranslation } from "@hooks";
 import { InfoCard } from "./components";
-import { useStyles } from "./styles";
 
 const Solution = () => {
   const { t } = useTranslation();
-  const classes = useStyles();
-  const theme: CustomTheme = useTheme();
-  const { isDesktop } = useGetScreenSizeHook();
+
   return (
-    <div className={classes.root}>
-      <Typography
-        variant="h1"
-        style={{
-          color: theme.palette.custom.general.main,
-          fontWeight: 900,
-          fontSize: isDesktop ? theme.spacing(10) : theme.spacing(5),
-        }}
+    <div className="w-full max-w-[1200px] font-light text-white">
+      <h1
+        id="solution-title"
+        className="text-[40px] font-black text-accent min-[1080px]:text-[80px]"
       >
         PREFERENCE
-      </Typography>
-      <p>{t("preferenceP")}</p>
-
-      <div className="hero__content">
-        <a
-          href="/files/desmos-project-plan-v0.4.2.pdf"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {/* <h4>{t("learnMore")}</h4>
-          <ArrowIcon className="arrow__icon" />{" "} */}
-        </a>
-      </div>
-
-      <div>
-        <InfoCard />
-      </div>
-      <Box display="flex" flexDirection="row">
-        <Divider
-          orientation="vertical"
-          style={{
-            backgroundColor: theme.palette.custom.general.main,
-            height: theme.spacing(2),
-          }}
-        />
-        <Typography
-          variant="body2"
-          style={{
-            fontSize: theme.spacing(1.5),
-            padding: 0,
-            paddingLeft: theme.spacing(0.5),
-          }}
-        >
+      </h1>
+      <p className="pt-2 pb-6 text-xl font-light min-[1280px]:text-2xl">
+        {t("preferenceP")}
+      </p>
+      <InfoCard />
+      <div className="mt-2 flex items-start">
+        <span aria-hidden="true" className="h-4 w-px shrink-0 bg-accent" />
+        <p className="pl-1 text-xs">
           These are all for reference only and decisions will be made on a
           case-by-case basis.
-        </Typography>
-      </Box>
+        </p>
+      </div>
     </div>
   );
 };

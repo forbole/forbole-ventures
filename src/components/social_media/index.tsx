@@ -1,40 +1,24 @@
 import React from "react";
 import { socialMediaLinks } from "./utils";
-import { useGetStyles } from "./styles";
 import { Props } from "./types";
 
 const SocialMedia = (props: Props) => {
   const { className = "", utils } = props;
-  const { classes } = useGetStyles();
+  const links = utils ?? socialMediaLinks;
   return (
-    <div className={`${className} ${classes.root} social-media`}>
-      {utils
-        ? utils.map((x) => {
-            return (
-              <a
-                key={x.className}
-                href={x.url}
-                target="_blank"
-                rel="noreferrer"
-                className={`media ${x.className}`}
-              >
-                {x.component}
-              </a>
-            );
-          })
-        : socialMediaLinks.map((x) => {
-            return (
-              <a
-                key={x.className}
-                href={x.url}
-                target="_blank"
-                rel="noreferrer"
-                className={`media ${x.className}`}
-              >
-                {x.component}
-              </a>
-            );
-          })}
+    <div className={`${className} social-media flex items-center`}>
+      {links.map((item) => (
+        <a
+          key={item.className}
+          href={item.url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={item.className === "linkedin" ? "LinkedIn" : item.className}
+          className={`media mx-2 leading-none first:ml-0 last:mr-0 ${item.className}`}
+        >
+          {item.component}
+        </a>
+      ))}
     </div>
   );
 };

@@ -1,9 +1,7 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   output: "standalone",
-  // @mui/styles creates JSS sheets during render and is not Strict Mode safe.
-  // Keep this off until the remaining legacy styles move to Emotion.
-  reactStrictMode: false,
+  reactStrictMode: true,
   poweredByHeader: false,
   i18n: {
     locales: ["en", "zht"],

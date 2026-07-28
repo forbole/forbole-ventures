@@ -1,39 +1,8 @@
-import React, { useMemo, useState } from "react";
 import Head from "next/head";
 import { AppProps } from "next/app";
-import CssBaseline from "@mui/material/CssBaseline";
-// import { ApolloProvider } from "@apollo/client";
-// import client from "@graphql";
-import { ThemeProvider as MaterialThemeProvider } from "@mui/material/styles";
-import { ThemeProvider as StylesThemeProvider } from "@mui/styles";
-import { darkTheme, lightTheme } from "@styles";
-
-export const useLayoutHook = () => {
-  const [isDarkMode, setMode] = useState(false);
-
-  const theme = useMemo(
-    () => (isDarkMode ? darkTheme : lightTheme),
-    [isDarkMode]
-  );
-
-  return {
-    isDarkMode,
-    setMode,
-    theme,
-  };
-};
 
 // This default export is required in a new `pages/_app.js` file.
 function MyApp({ Component, pageProps }: AppProps) {
-  const { theme } = useLayoutHook();
-  React.useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector("#jss-server-side");
-    if (jssStyles) {
-      jssStyles.remove();
-    }
-  }, []);
-
   return (
     <>
       <Head>
@@ -63,12 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#ccff00" />
         <meta name="theme-color" content="#000000" />
       </Head>
-      <MaterialThemeProvider theme={theme}>
-        <StylesThemeProvider theme={theme}>
-          <CssBaseline />
-          <Component {...pageProps} />
-        </StylesThemeProvider>
-      </MaterialThemeProvider>
+      <Component {...pageProps} />
     </>
   );
 }

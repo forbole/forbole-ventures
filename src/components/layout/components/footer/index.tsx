@@ -1,118 +1,46 @@
-import React from "react";
-import { Box, useTheme } from "@mui/material";
 import { Logo, ItemGrid, Contact, Community } from "./components";
 import { companyItems, productItems } from "./utils";
-import { useGetStyles } from "./styles";
-import { useGetScreenSizeHook, useTranslation } from "@hooks";
-import { CustomTheme } from "@src/styles";
+import { useTranslation } from "@hooks";
 
 const Footer = () => {
   const { t } = useTranslation();
-  const { isDesktop } = useGetScreenSizeHook();
-  const { classes } = useGetStyles();
-  const theme: CustomTheme = useTheme();
-
-  // ============================
-  // Footer
-  // ============================
   const year = new Date().getFullYear();
 
   return (
-    <Box className={`${classes.root} footer`} mt={theme.spacing(2)}>
-      <Box className="footer__content">
-        {/* ============================= */}
-        {/* logo */}
-        {/* ============================= */}
-        <Box pb={isDesktop ? 0 : theme.spacing(0.5)}>
-          <Logo />
-        </Box>
-        {/* ============================= */}
-        {/* links */}
-        {/* ============================= */}
-        {/* <div className="footer__desktop">
-          <div className="footer__links">
-            {footerItems.map((link) => {
-              return (
-                <div key={link.key} className={`${link.key} links__group`}>
-                  <Link key={link.url} href={baseURL + link.url}>
-                    <a>{t(`${link.key}`)}</a>
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
-        </div> */}
-        <Box
-          display="flex"
-          flexDirection="row"
-          alignItems="center"
-          justifyContent="space-between"
-          pb={isDesktop ? 0 : theme.spacing(0.5)}
-        >
-          {/* {footerItems.map((item, i) => {
-            return (
+    <footer className="relative z-[101] mt-4 bg-[rgba(19,19,22,0.8)] px-6 pt-12 pb-16">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-4 min-[1080px]:flex-row min-[1080px]:items-start min-[1080px]:justify-between min-[1080px]:gap-8">
+        <Logo />
+        <div className="flex items-start justify-between gap-8 pb-1 min-[1080px]:pb-0">
+          <div className="flex flex-col items-start min-[1080px]:pr-2">
+            {companyItems.map((item) => (
               <ItemGrid
-                key={i}
+                key={item.header ?? item.key}
                 header={item.header}
                 name={item.key}
                 url={item.url}
               />
-            );
-          })} */}
-          <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="flex-start"
-            pr={isDesktop ? theme.spacing(1) : 0}
-          >
-            {companyItems.map((item) => {
-              return (
-                <ItemGrid
-                  key={item.header ?? item.key}
-                  header={item.header}
-                  name={item.key}
-                  url={item.url}
-                />
-              );
-            })}
-          </Box>
-          <Box display="flex" flexDirection="column" alignItems="flex-start">
-            {productItems.map((item) => {
-              return (
-                <ItemGrid
-                  key={item.header ?? item.key}
-                  header={item.header}
-                  name={item.key}
-                  url={item.url}
-                />
-              );
-            })}
-          </Box>
-        </Box>
-        {/* ============================= */}
-        {/* social */}
-        {/* ============================= */}
-        <Box className="footer__social" pb={isDesktop ? 0 : theme.spacing(0.5)}>
-          {/* <h3>{t("community")}</h3> */}
-          {/* <SocialMedia /> */}
-          <Contact />
-          {/* ============================= */}
-          {/* copyright */}
-          {/* ============================= */}
-        </Box>
-        <Box pb={isDesktop ? 0 : theme.spacing(0.5)}>
-          <Community />
-        </Box>
-      </Box>
-      <Box
-        className="footer__copyright"
-        style={{ textAlign: isDesktop ? "left" : "center" }}
-      >
-        <p>
+            ))}
+          </div>
+          <div className="flex flex-col items-start">
+            {productItems.map((item) => (
+              <ItemGrid
+                key={item.header ?? item.key}
+                header={item.header}
+                name={item.key}
+                url={item.url}
+              />
+            ))}
+          </div>
+        </div>
+        <Contact />
+        <Community />
+      </div>
+      <div className="mx-auto mt-4 w-full max-w-[1200px] text-center min-[1080px]:mt-0 min-[1080px]:text-left">
+        <p className="text-[0.8rem] text-[#c4c4c4]">
           {t("copyright")} {year}
         </p>
-      </Box>
-    </Box>
+      </div>
+    </footer>
   );
 };
 

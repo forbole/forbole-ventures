@@ -1,54 +1,22 @@
-import React from 'react';
-import { Box, Button, Typography, useTheme } from '@mui/material';
-import ArrowIcon from '@assets/icon-arrow.svg';
-import { useStyles } from './styles';
-import { CustomTheme } from '@src/styles';
+import ArrowIcon from "@assets/icon-arrow.svg";
 
-const Contact = () => {
-  const classes = useStyles();
-  const theme: CustomTheme = useTheme();
-  return (
-    <Box
-      className={classes.root}
-      display="flex"
-      flexDirection="column"
-      justifyContent="flex-start"
+const Community = () => (
+  <div className="flex flex-col items-start text-base font-light text-white">
+    <p className="font-black text-accent">Community</p>
+    <p>Want to get updates on Forbole?</p>
+    <a
+      href="https://forbole.us5.list-manage.com/subscribe?u=a1ec5bb20979a8c8db7fc58b2&id=9e47491b93"
+      target="_blank"
+      rel="noreferrer"
+      className="mt-2 inline-flex items-center rounded bg-accent px-4 py-2 text-sm font-black tracking-[1.25px] text-black transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
     >
-      <Typography
-        variant="body1"
-        style={{ color: theme.palette.custom.general.main, fontWeight: 900 }}
-      >
-        Community
-      </Typography>
-      <Typography
-        variant="body1"
-        style={{ color: theme.palette.custom.basic.white }}
-      >
-        Want to get updates on Forbole?
-      </Typography>
-      <Button
-        component="a"
-        href="https://forbole.us5.list-manage.com/subscribe?u=a1ec5bb20979a8c8db7fc58b2&id=9e47491b93"
-        target="_blank"
-        rel="noreferrer"
-        variant="contained"
-        style={{
-          backgroundColor: theme.palette.custom.general.main,
-          color: theme.palette.custom.basic.black,
-          fontWeight: 900,
-        }}
-        endIcon={
-          <ArrowIcon
-            height={theme.spacing(1.2)}
-            width={theme.spacing(1.7)}
-            fill={theme.palette.custom.basic.black}
-          />
-        }
-      >
-        Subscribe
-      </Button>
-    </Box>
-  );
-};
+      Subscribe
+      <ArrowIcon
+        aria-hidden="true"
+        className="ml-2 h-[9.6px] w-[13.6px] fill-black"
+      />
+    </a>
+  </div>
+);
 
-export default Contact;
+export default Community;

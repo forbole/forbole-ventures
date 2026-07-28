@@ -1,8 +1,4 @@
-import React from "react";
 import { useTranslation } from "@hooks";
-import { Box, Typography, useTheme } from "@mui/material";
-import { useStyles } from "./styles";
-import { CustomTheme } from "@src/styles";
 
 export interface ItemsGridProps {
   header?: string;
@@ -10,32 +6,25 @@ export interface ItemsGridProps {
   url?: string;
 }
 
-const ItemGrid = (props: ItemsGridProps) => {
+const ItemGrid = ({ header, name, url }: ItemsGridProps) => {
   const { t } = useTranslation();
-  const { header, name, url } = props;
-  const theme: CustomTheme = useTheme();
-  const classes = useStyles();
+
   return (
-    <Box className={classes.root}>
-      {header && (
-        <Typography
-          variant="body1"
-          style={{ color: theme.palette.custom.general.main, fontWeight: 900 }}
-        >
-          {t(header)}
-        </Typography>
-      )}
-      {name && (
-        <Typography
-          variant="body1"
-          style={{ color: theme.palette.custom.basic.white }}
-        >
-          <a href={url} target="_blank" rel="noreferrer">
+    <div className="text-base font-light text-white">
+      {header ? <p className="font-black text-accent">{t(header)}</p> : null}
+      {name ? (
+        <p className="mb-2">
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            className="transition-colors hover:text-accent focus-visible:text-accent focus-visible:outline-none"
+          >
             {t(name)}
           </a>
-        </Typography>
-      )}
-    </Box>
+        </p>
+      ) : null}
+    </div>
   );
 };
 

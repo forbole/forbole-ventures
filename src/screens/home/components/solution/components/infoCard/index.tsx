@@ -1,65 +1,38 @@
-import { useGetScreenSizeHook } from "@hooks";
 import IBCIcon from "@assets/ibc.svg";
 import EcoIcon from "@assets/eco.svg";
-import { useStyles } from "./styles";
-import {
-  Box,
-  Card,
-  Typography,
-  useTheme,
-} from "@mui/material";
-import { CustomTheme } from "@src/styles";
 
-const InfoCard = () => {
-  const classes = useStyles();
-  const { isDesktop } = useGetScreenSizeHook();
-  const theme: CustomTheme = useTheme();
-  return (
-    <Box className="solutionGrid">
-      <Card className={classes.root}>
-        {/* <HeroSlogan className="hero__slogan" /> */}
-        <IBCIcon />
-        <div className="card__content">
-          {/* <h3>{title}</h3>
-        <p>{details}</p> */}
-          <Typography>
-            IBC-enabled projects which use{" "}
-            <Box component="span" fontWeight="fontWeightBold">
-              <a
-                href="https://www.desmos.network/"
-                target="_blank"
-                rel="noreferrer"
-                style={{ display: "inline", textDecoration: "underline" }}
-              >
-                {/* <Box component="span" style={{ fontSize: theme.spacing(3) }}> */}
-                Desmos Profiles{/* </Box> */}
-              </a>
-            </Box>{" "}
-            as their user profiles
-          </Typography>
-        </div>
-      </Card>
-      <Card className={classes.root}>
-        {/* <HeroSlogan className="hero__slogan" /> */}
-        <EcoIcon />
-        <div className="card__content">
-          {/* <h3>{title}</h3>
-        <p>{details}</p> */}
-          <Typography
-            style={{
-              padding: isDesktop ? theme.spacing(1, 0) : theme.spacing(1.5, 0),
-              fontWeight: 700,
-              color: isDesktop ? "#CCFF00" : "#FFFFFF",
-            }}
-            variant="h2"
+const cardClass =
+  "info-card glass-panel flex flex-col rounded-2xl p-8 text-white min-[1280px]:flex-row min-[1280px]:items-center";
+
+const InfoCard = () => (
+  <div className="grid grid-cols-1 gap-10 px-2 py-3 min-[1280px]:grid-cols-2">
+    <article className={cardClass}>
+      <IBCIcon aria-hidden="true" />
+      <div className="pt-6 min-[1280px]:w-[70%] min-[1280px]:pt-0 min-[1280px]:pl-4">
+        <p className="text-base font-light min-[1280px]:pb-4 min-[1280px]:text-xl">
+          IBC-enabled projects which use{" "}
+          <a
+            href="https://www.desmos.network/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-bold underline min-[1280px]:text-accent"
           >
-            Cosmos / Flow / Oasis / Polkadot / Solana
-          </Typography>
-          <Typography variant="h4">ecosystem projects</Typography>
-        </div>
-      </Card>
-    </Box>
-  );
-};
+            Desmos Profiles
+          </a>{" "}
+          as their user profiles
+        </p>
+      </div>
+    </article>
+    <article className={cardClass}>
+      <EcoIcon aria-hidden="true" />
+      <div className="pt-6 min-[1280px]:w-[70%] min-[1280px]:pt-0 min-[1280px]:pl-4">
+        <h2 className="py-3 text-2xl font-bold text-white min-[1280px]:py-2 min-[1280px]:text-accent">
+          Cosmos / Flow / Oasis / Polkadot / Solana
+        </h2>
+        <h3 className="text-base font-medium">ecosystem projects</h3>
+      </div>
+    </article>
+  </div>
+);
 
 export default InfoCard;

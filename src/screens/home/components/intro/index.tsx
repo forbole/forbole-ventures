@@ -1,148 +1,65 @@
-import {
-  Box,
-  Divider,
-  List,
-  ListItem,
-  Typography,
-  useTheme,
-} from '@mui/material';
-import { useGetScreenSizeHook, useTranslation } from '@hooks';
-import { CustomTheme } from '@styles';
-import { useStyles } from './styles';
-import CountUp from 'react-countup';
+import CountUp from "react-countup";
+import { useTranslation } from "@hooks";
+
+const stats = [
+  {
+    value: <CountUp duration={5} end={14} />,
+    label: "Startups Funded",
+  },
+  {
+    value: (
+      <>
+        $<CountUp duration={20} end={40} />M+
+      </>
+    ),
+    label: "Net Asset",
+  },
+  {
+    value: (
+      <>
+        $<CountUp duration={20} end={939} />M +
+      </>
+    ),
+    label: (
+      <>
+        Tokens staked with <strong>Forbole</strong>
+      </>
+    ),
+  },
+];
 
 const Intro = () => {
   const { t } = useTranslation();
-  const classes = useStyles();
-  const theme: CustomTheme = useTheme();
-  const { isDesktop } = useGetScreenSizeHook();
+
   return (
-    <div className={classes.root}>
-      {/* <IntroSlogan className="intro__slogan" /> */}
-      {/* <img src=/> */}
-      {/* {isDesktop ? (
-        // <IntroDesktop className="dp" />
-        <div className="image-container">
-          <Image
-            src="/images/intro-slogan-desktop.png"
-            alt="Feature Image"
-            className="image"
-            layout="fill"
-          />
-        </div>
-      ) : (
-        <div className="image-container">
-          <Image
-            src="/images/intro-slogan.png"
-            alt="Feature Image"
-            className="image"
-            layout="fill"
-          />
-        </div>
-      )} */}
-      <Typography
-        variant="h2"
-        // style={{
-        //   paddingBottom: isDesktop ? theme.spacing(1.5) : 0,
-        // }}
-      >
+    <div className="w-full max-w-[1200px] font-light text-white">
+      <h2 className="text-2xl font-light min-[1080px]:text-[40px]">
         Invest in people who build the
-      </Typography>
-      <Typography
-        variant="h1"
-        className="bigH1"
-        style={{
-          color: theme.palette.custom.general.main,
-          // fontSize: isDesktop ? theme.spacing(10) : theme.spacing(5),
-        }}
+      </h2>
+      <h1
+        id="intro-title"
+        className="text-[2rem] font-black tracking-[1px] text-accent [text-shadow:1px_0_#ccff00] min-[1080px]:text-7xl min-[1080px]:tracking-[2px] min-[1080px]:[text-shadow:2px_0_#ccff00]"
       >
         NEW GENERATION INTERNET
-      </Typography>
-      <p className="intro">{t('intro')}</p>
-      <List
-        style={{
-          backgroundColor: 'rgba(199, 190, 190, 0.1)',
-          boxShadow:
-            'inset 120px 120px 101px rgba(51, 51, 51, 0.19), inset -20px -20px 50px rgba(32, 32, 32, 0.7), inset -50px -50px 70px rgba(0, 0, 0, 0.06), inset -10px -5px 29px rgba(0, 0, 0, 0.04), inset 50px 50px 70px rgba(255, 255, 255, 0.25)',
-          borderRadius: theme.spacing(1),
-        }}
-      >
-        <ListItem>
-          {/* <ListItemText primary="11" secondary="Startups Funded" /> */}
-          <Typography
-            variant="h1"
-            // style={{ color: theme.palette.custom.general.main }}
+      </h1>
+      <p className="text-base font-light min-[1080px]:text-xl">{t("intro")}</p>
+      <ul className="glass-panel my-8 flex flex-col overflow-hidden rounded-lg min-[1280px]:flex-row">
+        {stats.map((stat, index) => (
+          <li
+            key={typeof stat.label === "string" ? stat.label : "tokens-staked"}
+            className="relative flex flex-1 flex-col items-center p-6 text-center"
           >
-            <CountUp duration={5} end={14} />
-          </Typography>
-          <Typography
-            variant="body1"
-            style={{ color: theme.palette.custom.basic.white }}
-          >
-            Startups Funded
-          </Typography>
-        </ListItem>
-        <Divider
-          variant="middle"
-          orientation={isDesktop ? 'vertical' : 'horizontal'}
-          flexItem={isDesktop ? true : undefined}
-        />
-        <ListItem>
-          {/* <ListItemText primary="11" secondary="Startups Funded" /> */}
-          <Typography
-            variant="h1"
-            // style={{ color: theme.palette.custom.general.main }}
-          >
-            $
-            <CountUp duration={20} end={40} />
-            M+
-          </Typography>
-          <Typography
-            variant="body1"
-            style={{ color: theme.palette.custom.basic.white }}
-          >
-            Net Asset
-          </Typography>
-        </ListItem>
-        <Divider
-          variant="middle"
-          orientation={isDesktop ? 'vertical' : 'horizontal'}
-          flexItem={isDesktop ? true : undefined}
-        />
-        <ListItem>
-          {/* <ListItemText primary="11" secondary="Startups Funded" /> */}
-          <Typography
-            variant="h1"
-            // style={{ color: theme.palette.custom.general.main }}
-          >
-            $
-            <CountUp duration={20} end={939} />M +
-          </Typography>
-          <Typography
-            variant="body1"
-            style={{ color: theme.palette.custom.basic.white }}
-          >
-            Tokens staked with{' '}
-            <Box component="span" fontWeight="fontWeightBold">
-              Forbole
-            </Box>
-          </Typography>
-        </ListItem>
-      </List>
-
-      {/* <div className="intro__content">
-        <div className="intro__left__content">
-          <LeftDotIcon className="dot__icon" />
-          <h3>{t("privacyIssue")}</h3>
-          <p>{t("leftIntro")}</p>
-        </div>
-        <div className="intro__right__content">
-          <RightDotIcon className="dot__icon" />
-          <h3>{t("censorship")}</h3>
-          <p>{t("rightIntro")}</p>
-          {/* <ArrowIcon className="arrow__icon" /> */}
-      {/* </div> */}
-      {/* </div>  */}
+            {index > 0 ? (
+              <span
+                aria-hidden="true"
+                className="absolute top-0 left-4 h-px w-[calc(100%-2rem)] bg-[rgba(234,255,148,0.3)] min-[1280px]:top-4 min-[1280px]:left-0 min-[1280px]:h-[calc(100%-2rem)] min-[1280px]:w-px"
+              />
+            ) : null}
+            <strong className="text-[2rem] font-black">{stat.value}</strong>
+            <span className="text-base text-white">{stat.label}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

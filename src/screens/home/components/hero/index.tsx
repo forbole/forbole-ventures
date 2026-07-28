@@ -1,49 +1,27 @@
-import { Box, Typography, useTheme } from "@mui/material";
-import { useStyles } from "./styles";
-import { CustomTheme } from "@styles";
-import { useGetScreenSizeHook, useTranslation } from "@hooks";
+import { useTranslation } from "@hooks";
 
 const Hero = () => {
   const { t } = useTranslation();
-  const classes = useStyles();
-  const theme: CustomTheme = useTheme();
-  const { isDesktop } = useGetScreenSizeHook();
+
   return (
-    <div className={classes.root}>
-      {/* <HeroSlogan className="hero__slogan" /> */}
-      <Typography
-        variant="h2"
-        style={{
-          paddingBottom: isDesktop ? theme.spacing(1.5) : 0,
-        }}
-      >
-        Let&apos;s Build The{" "}
-      </Typography>
-      <Box
-        display="flex"
-        flexDirection={isDesktop ? "row" : "column"}
-        alignItems={isDesktop ? "center" : "flex-start"}
-        pb={isDesktop ? theme.spacing(0.5) : 0}
-      >
-        <Typography
-          variant="h1"
-          style={{
-            color: theme.palette.custom.general.main,
-            fontWeight: 900,
-          }}
+    <div className="w-full max-w-[1200px] font-light text-white">
+      <h2 className="text-2xl font-light min-[1080px]:pb-3 min-[1080px]:text-7xl">
+        Let&apos;s Build The
+      </h2>
+      <div className="flex flex-col items-start min-[1080px]:flex-row min-[1080px]:items-center min-[1080px]:pb-1">
+        <h1
+          id="hero-title"
+          className="text-[2rem] font-black tracking-[1px] text-accent [text-shadow:1px_0_#ccff00] min-[1080px]:text-7xl min-[1080px]:tracking-[2px] min-[1080px]:[text-shadow:2px_0_#ccff00]"
         >
           DECENTRALIZED
-        </Typography>
-        <Typography
-          variant="h2"
-          style={{
-            paddingLeft: isDesktop ? theme.spacing(1) : 0,
-          }}
-        >
+        </h1>
+        <h2 className="text-2xl font-light min-[1080px]:pl-2 min-[1080px]:text-7xl">
           Future
-        </Typography>
-      </Box>
-      <p>{t("hero")}</p>
+        </h2>
+      </div>
+      <p className="py-3 text-base leading-normal font-light min-[1080px]:text-xl">
+        {t("hero")}
+      </p>
     </div>
   );
 };
