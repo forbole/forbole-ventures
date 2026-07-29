@@ -2,7 +2,7 @@ import ArrowIcon from "@assets/icon-arrow.svg";
 
 const Community = () => (
   <div className="flex flex-col items-start text-base font-light text-white">
-    <p className="font-black text-accent">Community</p>
+    <h2 className="font-black text-accent">Community</h2>
     <p>Want to get updates on Forbole?</p>
     <a
       href="https://forbole.us5.list-manage.com/subscribe?u=a1ec5bb20979a8c8db7fc58b2&id=9e47491b93"

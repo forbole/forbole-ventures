@@ -11,7 +11,7 @@ const ItemGrid = ({ header, name, url }: ItemsGridProps) => {
 
   return (
     <div className="text-base font-light text-white">
-      {header ? <p className="font-black text-accent">{t(header)}</p> : null}
+      {header ? <h2 className="font-black text-accent">{t(header)}</h2> : null}
       {name ? (
         <p className="mb-2">
           <a

@@ -24,6 +24,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="/images/icons/favicon-16x16.png"
         />
         <link rel="manifest" href="/images/icons/site.webmanifest" />
+        <meta name="application-name" content="Forbole Ventures" />
+        <meta name="apple-mobile-web-app-title" content="Forbole Ventures" />
+        <meta
+          name="msapplication-config"
+          content="/images/icons/browserconfig.xml"
+        />
         <link
           rel="mask-icon"
           href="/images/icons/safari-pinned-tab.svg"

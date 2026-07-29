@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ventures.forbole.com/sitemap.xml

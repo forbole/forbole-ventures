@@ -10,7 +10,10 @@ const Footer = () => {
     <footer className="relative z-[101] mt-4 bg-[rgba(19,19,22,0.8)] px-6 pt-12 pb-16">
       <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-4 min-[1080px]:flex-row min-[1080px]:items-start min-[1080px]:justify-between min-[1080px]:gap-8">
         <Logo />
-        <div className="flex items-start justify-between gap-8 pb-1 min-[1080px]:pb-0">
+        <nav
+          aria-label="Footer navigation"
+          className="flex items-start justify-between gap-8 pb-1 min-[1080px]:pb-0"
+        >
           <div className="flex flex-col items-start min-[1080px]:pr-2">
             {companyItems.map((item) => (
               <ItemGrid
@@ -31,7 +34,7 @@ const Footer = () => {
               />
             ))}
           </div>
-        </div>
+        </nav>
         <Contact />
         <Community />
       </div>

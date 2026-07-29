@@ -33,15 +33,14 @@ const Intro = () => {
 
   return (
     <div className="w-full max-w-[1200px] font-light text-white">
-      <h2 className="text-2xl font-light min-[1080px]:text-[40px]">
-        Invest in people who build the
+      <h2 id="intro-title">
+        <span className="block text-2xl font-light min-[1080px]:text-[40px]">
+          Invest in people who build the
+        </span>{" "}
+        <span className="block text-[2rem] font-black tracking-[1px] text-accent [text-shadow:1px_0_#ccff00] min-[1080px]:text-7xl min-[1080px]:tracking-[2px] min-[1080px]:[text-shadow:2px_0_#ccff00]">
+          NEW GENERATION INTERNET
+        </span>
       </h2>
-      <h1
-        id="intro-title"
-        className="text-[2rem] font-black tracking-[1px] text-accent [text-shadow:1px_0_#ccff00] min-[1080px]:text-7xl min-[1080px]:tracking-[2px] min-[1080px]:[text-shadow:2px_0_#ccff00]"
-      >
-        NEW GENERATION INTERNET
-      </h1>
       <p className="text-base font-light min-[1080px]:text-xl">{t("intro")}</p>
       <ul className="glass-panel my-8 flex flex-col overflow-hidden rounded-lg min-[1280px]:flex-row">
         {stats.map((stat, index) => (

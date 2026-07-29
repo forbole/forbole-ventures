@@ -6,12 +6,12 @@ const Solution = () => {
 
   return (
     <div className="w-full max-w-[1200px] font-light text-white">
-      <h1
+      <h2
         id="solution-title"
         className="text-[40px] font-black text-accent min-[1080px]:text-[80px]"
       >
         PREFERENCE
-      </h1>
+      </h2>
       <p className="pt-2 pb-6 text-xl font-light min-[1280px]:text-2xl">
         {t("preferenceP")}
       </p>

@@ -8,12 +8,12 @@ const Portfolio = () => {
 
   return (
     <div className="w-full max-w-[1200px] font-light text-white">
-      <h1
+      <h2
         id="portfolio-title"
         className="text-[40px] font-black text-accent min-[1080px]:text-[80px]"
       >
         PORTFOLIO
-      </h1>
+      </h2>
       <p className="pb-[0.1rem] text-base min-[1280px]:text-2xl">
         {t("portfolioP")}
       </p>

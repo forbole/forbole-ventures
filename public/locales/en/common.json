@@ -26,13 +26,13 @@
     "blog": "Blog",
     "company": "Company",
     "community": "Community",
-    "hero": "The private investment arm of Forbole to invest in promising crypto projects.",
+    "hero": "Forbole Ventures backs promising early-stage Web3 and blockchain projects with capital, validator infrastructure, staking expertise, and ecosystem support.",
     "learnMore": "LEARN MORE",
     "privacyIssue": "Privacy Issues",
     "censorship": "Censorship",
     "leftIntro": "Centralized social networks generate income by infringing on the privacy of their users.",
     "rightIntro": "Centralized social networks censor users’ contents which are good for our community but bad for the centralized authority.",
-    "preferenceP": "We will gradually rebalance our portfolio and then reinvest our capital gain and income from staking and liquidity provisioning to new projects.",
+    "preferenceP": "We gradually rebalance our portfolio and reinvest capital gains and income from staking and liquidity provisioning into new projects.",
     "teamP": "The initial contributor of Desmos is Forbole, a renowned developer, validator and community builder in various blockchain ecosystems.",
     "browseTeam": "BROWSE TEAM",
     "profileP": "Manage your social identities in one decentralized place.",
@@ -43,8 +43,8 @@
     "zht": "Chinese",
     "oneProfile": "One Profile",
     "forEverything": "For Everything",
-    "intro": "Since 2017, Forbole has become a renowned developer, contributor, staking service provider and investor in blockchain space.",
-    "portfolioP": "Forbole Ventures participates in early-stage investments, staking and liquidity provisioning. Our early-stage investment portfolio includes : ",
+    "intro": "Since 2017, Forbole has become a renowned blockchain developer, contributor, staking service provider, and investor.",
+    "portfolioP": "Forbole Ventures participates in early-stage investment, staking, and liquidity provisioning. Our portfolio includes:",
     "aboutForbole": "About Forbole",
     "staking": "Staking",
     "product": "Product",
@@ -52,4 +52,3 @@
     "forboleX": "Forbole X",
     "desmosNetwork": "Desmos Network"
   }
-  

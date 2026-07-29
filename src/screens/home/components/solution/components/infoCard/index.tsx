@@ -9,7 +9,7 @@ const InfoCard = () => (
     <article className={cardClass}>
       <IBCIcon aria-hidden="true" />
       <div className="pt-6 min-[1280px]:w-[70%] min-[1280px]:pt-0 min-[1280px]:pl-4">
-        <p className="text-base font-light min-[1280px]:pb-4 min-[1280px]:text-xl">
+        <h3 className="text-base font-light min-[1280px]:pb-4 min-[1280px]:text-xl">
           IBC-enabled projects which use{" "}
           <a
             href="https://www.desmos.network/"
@@ -20,16 +20,16 @@ const InfoCard = () => (
             Desmos Profiles
           </a>{" "}
           as their user profiles
-        </p>
+        </h3>
       </div>
     </article>
     <article className={cardClass}>
       <EcoIcon aria-hidden="true" />
       <div className="pt-6 min-[1280px]:w-[70%] min-[1280px]:pt-0 min-[1280px]:pl-4">
-        <h2 className="py-3 text-2xl font-bold text-white min-[1280px]:py-2 min-[1280px]:text-accent">
+        <h3 className="py-3 text-2xl font-bold text-white min-[1280px]:py-2 min-[1280px]:text-accent">
           Cosmos / Flow / Oasis / Polkadot / Solana
-        </h2>
-        <h3 className="text-base font-medium">ecosystem projects</h3>
+        </h3>
+        <p className="text-base font-medium">ecosystem projects</p>
       </div>
     </article>
   </div>
